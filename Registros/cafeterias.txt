@@ -1,0 +1,8 @@
+Frato Cafe,Descripción 1,Ubicación 1
+Cafe San Sebas,Descripción 2,Ubicación 2
+Frato Cafe,El texto se generará automáticamente al elegir el lugar a
+visitar.,El texto se generará automáticamente al elegir el lugar a
+visitar.
+Frato Cafe,El texto se generará automáticamente al elegir el lugar a
+visitar.,El texto se generará automáticamente al elegir el lugar a
+visitar.
