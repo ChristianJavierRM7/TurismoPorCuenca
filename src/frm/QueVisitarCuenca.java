@@ -72,6 +72,11 @@ public class QueVisitarCuenca extends javax.swing.JFrame {
 
         btnCuandoVenir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnCuandoVenir.setText("<html>¿Cuándo<br><small>Venir?</small></html>");
+        btnCuandoVenir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCuandoVenirActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCuandoVenir, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 110, 60));
 
         btnExperienciasTrip.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -121,6 +126,13 @@ public class QueVisitarCuenca extends javax.swing.JFrame {
         paginaPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnCuandoVenirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuandoVenirActionPerformed
+        // TODO add your handling code here:
+        CuandoVenir1 cuandovenir1 = new CuandoVenir1();
+        cuandovenir1.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCuandoVenirActionPerformed
 
     /**
      * @param args the command line arguments
