@@ -18,6 +18,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Formatter;
 import java.util.regex.*;
 
@@ -345,23 +346,40 @@ public class registroUsuario extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Ingrese sus apellidos");
     } else if (email.isEmpty()) {
         JOptionPane.showMessageDialog(null, "Ingrese su correo electrónico");
+    } else if (!isEmailC(email)) {
+        JOptionPane.showMessageDialog(null, "El correo electrónico no es válido. Ejemplo válido: usuario@dominio.com");
     } else if (numeroTelefono.isEmpty()) {
         JOptionPane.showMessageDialog(null, "Ingrese su número de teléfono");
+    } else if (!isTelefonoValido(numeroTelefono)) {
+        JOptionPane.showMessageDialog(null, "El número de teléfono no es válido. Debe tener exactamente 10 dígitos.");
     } else if (contraseña.isEmpty()) {
         JOptionPane.showMessageDialog(null, "Ingrese su contraseña");
+    } else if (!esContraseñaSegura(contraseña)) {
+        JOptionPane.showMessageDialog(null, "La contraseña no cumple con los requisitos de seguridad:\n"
+                + "- Mínimo 8 caracteres\n"
+                + "- Al menos una mayúscula\n"
+                + "- Al menos una minúscula\n"
+                + "- Al menos un número\n"
+                + "- Al menos un carácter especial");
     } else if (confirmarContraseña.isEmpty()) {
-     JOptionPane.showMessageDialog(null, "Confirme su contraseña");
-    } else if (numeroTelefono.length() != 10) { // Verifica que el número tenga 10 dígitos
-        JOptionPane.showMessageDialog(null, "El número de teléfono debe tener 10 dígitos.");
-    } else if (!contraseña.equals(confirmarContraseña)) { // Verifica que las contraseñas coincidan
+        JOptionPane.showMessageDialog(null, "Confirme su contraseña");
+    } else if (!contraseña.equals(confirmarContraseña)) {
         JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden.");
-    } else if (tipoUsuario.equals("Seleccionar")) { // Verifica que se haya seleccionado un tipo de usuario
+    } else if (tipoUsuario.equals("Seleccionar")) {
         JOptionPane.showMessageDialog(null, "Seleccione un tipo de usuario.");
     } else {
-        // Si todas las validaciones son correctas, mostrar mensaje de éxito
-        JOptionPane.showMessageDialog(null, "Usuario registrado con éxito");
-        limpiar(); // Limpiar los campos después del registro
-    }    
+        try (FileWriter writer = new FileWriter("cuentausers.txt", true)) {
+            String datosUsuario = String.format("%s,%s,%s,%s,%s,%s%n", 
+                nombres, apellidos, email, numeroTelefono, contraseña, tipoUsuario);
+            writer.write(datosUsuario);
+            JOptionPane.showMessageDialog(null, "Registro exitoso");
+            limpiar(); // Limpiar campos
+            this.dispose(); // Cierra la ventana de registro
+            new xd().setVisible(true); // Abre la ventana de login
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al guardar los datos: " + e.getMessage());
+        }
+    }
     
     }//GEN-LAST:event_btnRegistroxActionPerformed
 
@@ -426,36 +444,41 @@ public class registroUsuario extends javax.swing.JFrame {
     
     }//GEN-LAST:event_txtNumeroTelefonoKeyTyped
         
-    public boolean isEmailC(String correox) {
+    private boolean isTelefonoValido(String telefono) {
+    return telefono.matches("\\d{10}");
+}
+public boolean isEmailC(String correox) {
     String EMAIL_PATTERN = 
-        "^[_A-Za-z0-9-+]+(\\.[_A-Za-z0-9-]+)*@" 
-        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
     Pattern pattern = Pattern.compile(EMAIL_PATTERN);
     Matcher matcher = pattern.matcher(correox);
     return matcher.matches();
 }
         
-    private boolean esContraseñaSegura(String contraseña){
-        if(contraseña.length()<8){
-            return false;
-        }
-        boolean tieneMayuscula = false;
-        boolean tieneMinuscula = false;
-        boolean tieneNumero=false;
-        boolean tieneCaracterEspecial = false;
-        for(char c : contraseña.toCharArray()){
-            if(Character.isUpperCase(c)){
-            tieneMayuscula=true;
-        }else if(Character.isLowerCase(c)){
-            tieneMinuscula=true;
-        }else if(Character.isDigit(c)){
-            tieneNumero=true;
-        }else if(!Character.isLetterOrDigit(c)){
-            tieneCaracterEspecial=true;
-        }
-        }
-        return tieneMayuscula&&tieneMinuscula&&tieneNumero&&tieneCaracterEspecial;
+    private boolean esContraseñaSegura(String contraseña) {
+    if(contraseña.length() < 8) {
+        return false;
     }
+    
+    boolean tieneMayuscula = false;
+    boolean tieneMinuscula = false;
+    boolean tieneNumero = false;
+    boolean tieneCaracterEspecial = false;
+    
+    for(char c : contraseña.toCharArray()) {
+        if(Character.isUpperCase(c)) {
+            tieneMayuscula = true;
+        } else if(Character.isLowerCase(c)) {
+            tieneMinuscula = true;
+        } else if(Character.isDigit(c)) {
+            tieneNumero = true;
+            } else if(!Character.isLetterOrDigit(c)) {
+            tieneCaracterEspecial = true;
+        }
+    }
+    
+    return tieneMayuscula && tieneMinuscula && tieneNumero && tieneCaracterEspecial;
+}
     /**
      * @param args the command line arguments
      */

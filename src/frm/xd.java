@@ -233,6 +233,24 @@ public class xd extends javax.swing.JFrame {
     private void txtUsuarioLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioLoginActionPerformed
+private boolean validarCredenciales(String usuario, String contrasena) {
+    try (BufferedReader br = new BufferedReader(new FileReader("cuentausers.txt"))) {
+        String linea;
+        while ((linea = br.readLine()) != null) {
+            String[] partes = linea.split(",");
+            if (partes.length == 6) { // Asegúrate de que hay 6 partes
+                String email = partes[2]; // Correo electrónico
+                String pass = partes[4]; // Contraseña
+                if (email.equals(usuario) && pass.equals(contrasena)) {
+                    return true; // Credenciales válidas
+                }
+            }
+        }
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al leer el archivo de usuarios: " + e.getMessage());
+    }
+    return false; // Credenciales no válidas
+}
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if(jCheckBox1.isSelected()){
@@ -277,48 +295,44 @@ private void borrarCredenciales() {
     }
 }
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
- 
-            
-            
-            String usuario = txtUsuarioLogin.getText();
-            String pass = new String(txtPasswordLogin.getPassword()); // Cambia a String para obtener la contraseña
-            // Validar
-            if (usuario.isEmpty() || pass.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Los campos no pueden estar vacíos");
-            } else {
-                // Validar las credenciales desde el archivo
-                if (validarCredenciales(usuario, pass)) {
-                    // Aquí puedes abrir la ventana correspondiente según el tipo de usuario
-                    // Por ejemplo:
-                    FrmPrincipal plataPrincipal = new FrmPrincipal();
-                    dispose();
-                    plataPrincipal.setVisible(true);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
-                }
-  }
-}
-
-private boolean validarCredenciales(String usuario, String contrasena) {
-
-    try (BufferedReader br = new BufferedReader(new FileReader("Registros/usuarios.txt"))) {
+ String usuario = txtUsuarioLogin.getText();
+    String pass = new String(txtPasswordLogin.getPassword());
+    
+    if (usuario.isEmpty() || pass.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Los campos no pueden estar vacíos");
+    } else if (validarCredenciales(usuario, pass)) {
+        String tipoUsuario = obtenerTipoUsuario(usuario);
+        
+        if ("Guia y Administrador".equals(tipoUsuario)) {
+            menuAdmin admin = new menuAdmin(); // No pasar nombre
+            admin.setVisible(true);
+        } else {
+            FrmPrincipal principal = new FrmPrincipal(); // No pasar nombre
+            principal.setVisible(true);
+        }
+        this.dispose(); // Cierra la ventana de login
+    } else {
+        JOptionPane.showMessageDialog(null, "Credenciales incorrectas");
+    }
+    }//GEN-LAST:event_btnLoginActionPerformed
+private String obtenerTipoUsuario(String usuario) {
+    try (BufferedReader br = new BufferedReader(new FileReader("cuentausers.txt"))) {
         String linea;
         while ((linea = br.readLine()) != null) {
-            String[] partes = linea.split(":");
-            if (partes.length == 2) {
-                String email = partes[0];
-                String pass = partes[1];
-                if (email.equals(usuario) && pass.equals(contrasena)) {
-                    return true; // Credenciales válidas
+            String[] partes = linea.split(",");
+            if (partes.length == 6) {
+                String email = partes[2]; // Correo electrónico
+                String tipo = partes[5]; // Tipo de usuario
+                if (email.equals(usuario)) {
+                    return tipo; // Retorna el tipo de usuario
                 }
             }
         }
     } catch (IOException e) {
         JOptionPane.showMessageDialog(null, "Error al leer el archivo de usuarios: " + e.getMessage());
     }
-    return false; // Credenciales no válidas
-
-    }//GEN-LAST:event_btnLoginActionPerformed
+    return null; // Si no se encuentra el usuario
+}
 
     private void abrirRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirRegistroActionPerformed
         registroUsuario registro = new registroUsuario();

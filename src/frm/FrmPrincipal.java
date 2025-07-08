@@ -8,6 +8,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         initComponents();
         
         setLocationRelativeTo(null);
+        
     }
 
   
@@ -42,6 +43,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        txtBienvenida = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,7 +78,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnVRelajarseActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVRelajarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, 130, 60));
+        jPanel2.add(btnVRelajarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 130, 60));
 
         btnQueVisitar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnQueVisitar.setText("<html>¿Qué<br><small>Visitar?</small></html>\"");
@@ -101,15 +103,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         btnVGastronomia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVGastronomia.setText("<html>Viaje por<br><small>Gastronomía</small></html>");
-        jPanel2.add(btnVGastronomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 110, 60));
+        jPanel2.add(btnVGastronomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 110, 60));
 
         btnVCultura.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVCultura.setText("<html>Viaje por<br><small>Cultura</small></html>");
-        jPanel2.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, 110, 60));
+        jPanel2.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 110, 60));
 
         btnVAventuras.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVAventuras.setText("<html>Viaje por<br><small></small></html>");
-        jPanel2.add(btnVAventuras, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 110, 60));
+        jPanel2.add(btnVAventuras, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 110, 60));
 
         btnNoticias.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnNoticias.setText("Noticias");
@@ -126,7 +128,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnVNegociosActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVNegocios, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, 110, 60));
+        jPanel2.add(btnVNegocios, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, 110, 60));
 
         btnVFiestas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVFiestas.setText("<html>Viaje por<br><small>Fiestas</small></html>");
@@ -135,7 +137,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnVFiestasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVFiestas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 130, 60));
+        jPanel2.add(btnVFiestas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 130, 60));
 
         btnVAmor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVAmor.setText("<html>Viaje por<br><small>Amor</small></html>");
@@ -144,7 +146,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnVAmorActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVAmor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 130, 60));
+        jPanel2.add(btnVAmor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 130, 60));
 
         btnVFamilia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVFamilia.setText("<html>Viaje con<br><small>Familia</small></html>");
@@ -153,7 +155,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnVFamiliaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVFamilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 130, 60));
+        jPanel2.add(btnVFamilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 130, 60));
 
         btnVDeportes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVDeportes.setText("<html>Viaje por<br><small>Deportes</small></html>");
@@ -162,7 +164,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnVDeportesActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVDeportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, 130, 60));
+        jPanel2.add(btnVDeportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, 130, 60));
 
         btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCerrarSesion.setText("<html>Cerrar sesión<br><small></small></html>");
@@ -188,7 +190,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnVComprasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 130, 60));
+        jPanel2.add(btnVCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 130, 60));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (11) (1).png"))); // NOI18N
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 280, 290, 390));
@@ -208,6 +210,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 80, 50));
+
+        txtBienvenida.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        txtBienvenida.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 130, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -328,5 +334,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel txtBienvenida;
     // End of variables declaration//GEN-END:variables
 }
