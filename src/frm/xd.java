@@ -290,7 +290,7 @@ private void borrarCredenciales() {
                 if (validarCredenciales(usuario, pass)) {
                     // Aquí puedes abrir la ventana correspondiente según el tipo de usuario
                     // Por ejemplo:
-                    plataformaPrincipal plataPrincipal = new plataformaPrincipal();
+                    FrmPrincipal plataPrincipal = new FrmPrincipal();
                     dispose();
                     plataPrincipal.setVisible(true);
                 } else {

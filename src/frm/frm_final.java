@@ -19,7 +19,7 @@ public class frm_final extends javax.swing.JFrame {
         jButton1 = new JButton("Regresar");
         jButton1.addActionListener(e -> {
             this.dispose();
-            new plataformaPrincipal().setVisible(true);
+            new FrmPrincipal().setVisible(true);
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 30)); // Cambia las coordenadas según lo necesites
 
@@ -262,7 +262,7 @@ public class frm_final extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:.
         this.dispose();
-        new plataformaPrincipal().setVisible(true);    
+        new FrmPrincipal().setVisible(true);    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
