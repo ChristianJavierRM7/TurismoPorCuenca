@@ -96,26 +96,56 @@ public class DescubreCuenca6 extends javax.swing.JFrame {
 
         btnPiedraAgua.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnPiedraAgua.setText("<html>Piedra de Agua: Fuente Termal y Spa<br><small></small></html>");
+        btnPiedraAgua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPiedraAguaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPiedraAgua, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 180, 80));
 
         btnNovaqua.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnNovaqua.setText("<html>Novaqua Spa<br><small></small></html>");
+        btnNovaqua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovaquaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnNovaqua, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 120, 70));
 
         btnBalRinon.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnBalRinon.setText("<html>Balneario Riñón<br><small></small></html>");
+        btnBalRinon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBalRinonActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnBalRinon, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 150, 80));
 
         btnBalDuran.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnBalDuran.setText("<html>Hosteria y Balneario Durán<br><small></small></html>");
+        btnBalDuran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBalDuranActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnBalDuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 150, 80));
 
         btnAgapantos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAgapantos.setText("<html>Hosteria Agapantos<br><small></small></html>");
+        btnAgapantos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgapantosActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAgapantos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 150, 80));
 
         btnRodas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnRodas.setText("<html>Hosteria Termal Rodas<br><small></small></html>");
+        btnRodas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRodasActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnRodas, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 150, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 480));
@@ -143,6 +173,48 @@ public class DescubreCuenca6 extends javax.swing.JFrame {
         descubrecuenca7.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
+
+    private void btnPiedraAguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPiedraAguaActionPerformed
+        // TODO add your handling code here:
+        PiedraAgua piedra = new PiedraAgua();
+        piedra.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnPiedraAguaActionPerformed
+
+    private void btnNovaquaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaquaActionPerformed
+        // TODO add your handling code here:
+        NovaquaSpa novaqua = new NovaquaSpa();
+        novaqua.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnNovaquaActionPerformed
+
+    private void btnBalDuranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBalDuranActionPerformed
+        // TODO add your handling code here:
+        HosteriaDuran duran = new HosteriaDuran();
+        duran.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBalDuranActionPerformed
+
+    private void btnAgapantosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgapantosActionPerformed
+        // TODO add your handling code here:
+        HosteriaAgapantos agapantos = new HosteriaAgapantos();
+        agapantos.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAgapantosActionPerformed
+
+    private void btnRodasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRodasActionPerformed
+        // TODO add your handling code here:
+        HosTermalRodas termalRodas = new HosTermalRodas();
+        termalRodas.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRodasActionPerformed
+
+    private void btnBalRinonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBalRinonActionPerformed
+        // TODO add your handling code here:
+        BalRinon rinon = new BalRinon();
+        rinon.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBalRinonActionPerformed
 
     /**
      * @param args the command line arguments

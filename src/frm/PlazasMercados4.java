@@ -156,8 +156,8 @@ public class PlazasMercados4 extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-        DescubreCuenca3 descubrecuenca3 = new DescubreCuenca3();
-        descubrecuenca3.setVisible(true);
+     ReservaLugares reservaLugares = new ReservaLugares();
+        reservaLugares.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 

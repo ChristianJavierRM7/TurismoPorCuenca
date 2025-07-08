@@ -96,26 +96,56 @@ public class DescubreCuenca5 extends javax.swing.JFrame {
 
         btnMuseoHorario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnMuseoHorario.setText("<html>Conoce sus horarios aquí<br><small></small></html>");
+        btnMuseoHorario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMuseoHorarioActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnMuseoHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 160, 70));
 
         btnPajaSombrero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnPajaSombrero.setText("<html>Museo de la Paja Toquilla y el Sombrero<br><small></small></html>");
+        btnPajaSombrero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPajaSombreroActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPajaSombrero, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 150, 80));
 
         btnMUCuenca.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnMUCuenca.setText("<html>Museo de la UCuenca<br><small></small></html>");
+        btnMUCuenca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMUCuencaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnMUCuenca, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, 110, 100));
 
         btnPumapungo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnPumapungo.setText("<html>Museo y parque arqueológico Pumapungo<br><small></small></html>");
+        btnPumapungo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPumapungoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPumapungo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 180, 80));
 
         btnArteModerno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnArteModerno.setText("<html>Museo de Arte Moderno<br><small></small></html>");
+        btnArteModerno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArteModernoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnArteModerno, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 110, 100));
 
         btnRCrespo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnRCrespo.setText("<html>Museo Remigio Crespo<br><small></small></html>");
+        btnRCrespo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRCrespoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnRCrespo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 160, 70));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 480));
@@ -143,6 +173,48 @@ public class DescubreCuenca5 extends javax.swing.JFrame {
         descubrecuenca6.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
+
+    private void btnPajaSombreroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPajaSombreroActionPerformed
+        // TODO add your handling code here:
+        MuseoPajaToquilla museopajasombrero = new MuseoPajaToquilla();
+        museopajasombrero.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnPajaSombreroActionPerformed
+
+    private void btnPumapungoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPumapungoActionPerformed
+        // TODO add your handling code here:
+        MuseoPumapungo museopumapungo = new MuseoPumapungo();
+        museopumapungo.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnPumapungoActionPerformed
+
+    private void btnRCrespoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRCrespoActionPerformed
+        // TODO add your handling code here:
+        MuseoRemigioCrespo museoremigiocrespo = new MuseoRemigioCrespo();
+        museoremigiocrespo.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRCrespoActionPerformed
+
+    private void btnArteModernoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArteModernoActionPerformed
+        // TODO add your handling code here:
+        MuseoArteModerno museoartemoderno = new MuseoArteModerno();
+        museoartemoderno.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnArteModernoActionPerformed
+
+    private void btnMUCuencaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMUCuencaActionPerformed
+        // TODO add your handling code here:
+        MuseoUCuenca museoucuenca = new MuseoUCuenca();
+        museoucuenca.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnMUCuencaActionPerformed
+
+    private void btnMuseoHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMuseoHorarioActionPerformed
+        // TODO add your handling code here:
+         HorariosMuseos horariosmuseos = new HorariosMuseos();
+        horariosmuseos.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnMuseoHorarioActionPerformed
 
     /**
      * @param args the command line arguments

@@ -151,6 +151,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Piedra de Agua: Fuente Termal y Spa&lt;br&gt;&lt;small&gt;&lt;/small&gt;&lt;/html&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPiedraAguaActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="80" y="160" width="180" height="80"/>
@@ -164,6 +167,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Novaqua Spa&lt;br&gt;&lt;small&gt;&lt;/small&gt;&lt;/html&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovaquaActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="330" y="170" width="120" height="70"/>
@@ -177,6 +183,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Balneario Ri&#xf1;&#xf3;n&lt;br&gt;&lt;small&gt;&lt;/small&gt;&lt;/html&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBalRinonActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="550" y="280" width="150" height="80"/>
@@ -190,6 +199,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Hosteria y Balneario Dur&#xe1;n&lt;br&gt;&lt;small&gt;&lt;/small&gt;&lt;/html&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBalDuranActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="530" y="150" width="150" height="80"/>
@@ -203,6 +215,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Hosteria Agapantos&lt;br&gt;&lt;small&gt;&lt;/small&gt;&lt;/html&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgapantosActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="90" y="280" width="150" height="80"/>
@@ -216,6 +231,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Hosteria Termal Rodas&lt;br&gt;&lt;small&gt;&lt;/small&gt;&lt;/html&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRodasActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="320" y="280" width="150" height="80"/>

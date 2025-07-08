@@ -107,6 +107,11 @@ public class DescubreCuenca7 extends javax.swing.JFrame {
 
         btnConoceMas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnConoceMas.setText("<html>Conoce más aquí<br><small></small></html>");
+        btnConoceMas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConoceMasActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnConoceMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 180, 80));
 
         btnRotary.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -138,6 +143,13 @@ public class DescubreCuenca7 extends javax.swing.JFrame {
         descubrecuenca8.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
+
+    private void btnConoceMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConoceMasActionPerformed
+        // TODO add your handling code here:
+         Artesanos artesanos = new Artesanos();
+        artesanos.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnConoceMasActionPerformed
 
     /**
      * @param args the command line arguments

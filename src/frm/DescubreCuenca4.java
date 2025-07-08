@@ -96,6 +96,11 @@ public class DescubreCuenca4 extends javax.swing.JFrame {
 
         btnRegresar1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnRegresar1.setText("Conoce más aquí");
+        btnRegresar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresar1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnRegresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 170, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
@@ -123,6 +128,13 @@ public class DescubreCuenca4 extends javax.swing.JFrame {
         descubrecuenca5.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
+
+    private void btnRegresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar1ActionPerformed
+        // TODO add your handling code here:
+        PlazasMercados1 plazasmercados1 = new PlazasMercados1();
+        plazasmercados1.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresar1ActionPerformed
 
     /**
      * @param args the command line arguments
