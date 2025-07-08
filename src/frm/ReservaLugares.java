@@ -101,6 +101,9 @@ DefaultTableModel modelo;
         cbPatrimonios = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         btnOrdenar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -132,8 +135,8 @@ DefaultTableModel modelo;
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Seleccione el lugar que desea guardar en sus proximas visitas para agregarlo a la tabla:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 480, -1));
+        jLabel6.setText("mejor recorrido por la ciudad, para ello, pulsa aquí.");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 340, 20));
 
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnEliminar.setText("Eliminar");
@@ -231,6 +234,23 @@ DefaultTableModel modelo;
         });
         jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 410, 160, 60));
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Seleccione el lugar que desea guardar en sus proximas visitas para agregarlo a la tabla:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 480, -1));
+
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Es recomendable que busques un guía que te ayude a tener un");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 340, 20));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jButton1.setText("Ver guías");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 130, 30));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
 
         pack();
@@ -266,8 +286,6 @@ DefaultTableModel modelo;
  if (cbTipo.getSelectedItem() != null && cbTipo.getSelectedItem().toString().length() > 0) {
         String tipoLugar = cbTipo.getSelectedItem().toString();
         String lugarSeleccionado = "";
-        
-        // Verificar que se haya seleccionado un lugar específico
         if ("Museos".equals(tipoLugar)) {
             lugarSeleccionado = cbMuseos.getSelectedItem().toString();
         } else if ("Restaurantes".equals(tipoLugar)) {
@@ -376,6 +394,10 @@ private void ordenarPorTipo() {
     JOptionPane.showMessageDialog(null, "Datos ordenados por tipo de lugar.");
     }//GEN-LAST:event_btnOrdenarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -416,12 +438,15 @@ private void ordenarPorTipo() {
     private javax.swing.JComboBox<String> cbRestaurantes;
     private javax.swing.JComboBox<String> cbTermales;
     private javax.swing.JComboBox<String> cbTipo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablita;

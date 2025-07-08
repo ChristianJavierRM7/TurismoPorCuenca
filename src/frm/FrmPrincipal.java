@@ -40,6 +40,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnVCompras = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,6 +62,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         btnContratarGuia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnContratarGuia.setText("<html>Contratar<br><small>Guia</small></html>");
+        btnContratarGuia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContratarGuiaActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnContratarGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 100, 80));
 
         btnVRelajarse.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -101,7 +108,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jPanel2.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, 110, 60));
 
         btnVAventuras.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVAventuras.setText("<html>Viaje por<br><small>Aventuras</small></html>");
+        btnVAventuras.setText("<html>Viaje por<br><small></small></html>");
         jPanel2.add(btnVAventuras, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 110, 60));
 
         btnNoticias.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -186,6 +193,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (11) (1).png"))); // NOI18N
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 280, 290, 390));
 
+        jButton2.setText("<html>Clima de la Ciudad<br><small></small></html>\"");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 80, 50));
+
+        jButton1.setText("MAPA");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 80, 50));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -232,6 +255,26 @@ public class FrmPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnQueVisitarActionPerformed
 
+    private void btnContratarGuiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratarGuiaActionPerformed
+        // TODO add your handling code here:
+         VerGuias verguias = new VerGuias();
+        verguias.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnContratarGuiaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Frm_Recomendaciones clima = new Frm_Recomendaciones();
+        clima.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  Frm_mapa mapa = new Frm_mapa();
+        mapa.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -277,6 +320,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnVGastronomia;
     private javax.swing.JButton btnVNegocios;
     private javax.swing.JButton btnVRelajarse;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
