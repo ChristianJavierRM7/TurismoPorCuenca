@@ -42,17 +42,8 @@ public class registroUsuario extends javax.swing.JFrame {
         setVisible(true);
         this.ocultar2.setVisible(false);
         this.ocultar3.setVisible(false);
-         btnRegistrox.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-            // Lógica de registro
-            // ...
-
-            // Si el registro es exitoso, muestra el mensaje y cambia a la ventana de inicio de sesión
-            JOptionPane.showMessageDialog(registroUsuario.this, "Usuario registrado con éxito");
-            registroUsuario.this.dispose(); // Cierra la ventana de registro
-            new xd().setVisible(true); // Abre la ventana de inicio de sesión
-        }
-    });
+      
+    
     }
         registroUsuario(Object object, boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -93,6 +84,8 @@ public class registroUsuario extends javax.swing.JFrame {
         ver3 = new javax.swing.JLabel();
         ocultar3 = new javax.swing.JLabel();
         regresarLogin = new javax.swing.JButton();
+        txtNumeroTelefono = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -119,22 +112,22 @@ public class registroUsuario extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
         jLabel5.setText("Registro de Usuario");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 320, 60));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 320, 50));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel6.setText("crear su cuenta!");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 300, 30));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 300, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel7.setText("Llene los siguientes campos para");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 300, 30));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 300, 30));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 120));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 80));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Apellidos");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 150, 30));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 150, 20));
 
         txtEmail.setBackground(new java.awt.Color(204, 204, 204));
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -142,12 +135,17 @@ public class registroUsuario extends javax.swing.JFrame {
                 txtEmailActionPerformed(evt);
             }
         });
-        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 430, 40));
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEmailKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 430, 40));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("Nombres");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 150, 30));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 150, 20));
 
         txtNombres.setBackground(new java.awt.Color(204, 204, 204));
         txtNombres.addActionListener(new java.awt.event.ActionListener() {
@@ -160,34 +158,34 @@ public class registroUsuario extends javax.swing.JFrame {
                 txtNombresKeyTyped(evt);
             }
         });
-        jPanel2.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 430, 40));
+        jPanel2.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 430, 40));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setText("Correo electrónico");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 150, 30));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 150, 20));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel13.setText("Contraseña");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 150, 30));
+        jLabel13.setText("Número de teléfono");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 150, 20));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(51, 51, 51));
         jLabel15.setText("Confirmar contraseña");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 180, 30));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 180, 20));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(51, 51, 51));
         jLabel16.setText("Tipo de Usuario");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 150, 30));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 150, 20));
 
         comboTipoUsuario.setBackground(new java.awt.Color(204, 204, 204));
         comboTipoUsuario.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
         comboTipoUsuario.setForeground(new java.awt.Color(102, 102, 102));
-        comboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Local", "Visitante" }));
+        comboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Usuario Turista", "Guia y Administrador" }));
         comboTipoUsuario.setBorder(null);
-        jPanel2.add(comboTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
+        jPanel2.add(comboTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, -1, 20));
 
         btnRegistrox.setBackground(new java.awt.Color(51, 102, 255));
         btnRegistrox.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -204,11 +202,11 @@ public class registroUsuario extends javax.swing.JFrame {
 
         txtPassword.setBackground(new java.awt.Color(204, 204, 204));
         txtPassword.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 430, 40));
+        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 430, 40));
 
         txtCPassword.setBackground(new java.awt.Color(204, 204, 204));
         txtCPassword.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        jPanel2.add(txtCPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 430, 40));
+        jPanel2.add(txtCPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 430, 40));
 
         txtApellidos.setBackground(new java.awt.Color(204, 204, 204));
         txtApellidos.addActionListener(new java.awt.event.ActionListener() {
@@ -221,7 +219,7 @@ public class registroUsuario extends javax.swing.JFrame {
                 txtApellidosKeyTyped(evt);
             }
         });
-        jPanel2.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 430, 40));
+        jPanel2.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 430, 40));
 
         ver2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (6) (2).png"))); // NOI18N
         ver2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -229,7 +227,7 @@ public class registroUsuario extends javax.swing.JFrame {
                 ver2MouseClicked(evt);
             }
         });
-        jPanel2.add(ver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 30, 30));
+        jPanel2.add(ver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 360, 30, 30));
 
         ocultar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (7) (1).png"))); // NOI18N
         ocultar2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -237,7 +235,7 @@ public class registroUsuario extends javax.swing.JFrame {
                 ocultar2MouseClicked(evt);
             }
         });
-        jPanel2.add(ocultar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, -1, -1));
+        jPanel2.add(ocultar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 360, -1, -1));
 
         ver3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (6) (2).png"))); // NOI18N
         ver3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -245,7 +243,7 @@ public class registroUsuario extends javax.swing.JFrame {
                 ver3MouseClicked(evt);
             }
         });
-        jPanel2.add(ver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, 30, 30));
+        jPanel2.add(ver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 30, 30));
 
         ocultar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/image-removebg-preview (7) (1).png"))); // NOI18N
         ocultar3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -253,7 +251,7 @@ public class registroUsuario extends javax.swing.JFrame {
                 ocultar3MouseClicked(evt);
             }
         });
-        jPanel2.add(ocultar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, 30, 30));
+        jPanel2.add(ocultar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 30, 30));
 
         regresarLogin.setBackground(new java.awt.Color(255, 0, 0));
         regresarLogin.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -265,6 +263,24 @@ public class registroUsuario extends javax.swing.JFrame {
             }
         });
         jPanel2.add(regresarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 550, 160, 40));
+
+        txtNumeroTelefono.setBackground(new java.awt.Color(204, 204, 204));
+        txtNumeroTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroTelefonoActionPerformed(evt);
+            }
+        });
+        txtNumeroTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumeroTelefonoKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtNumeroTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 430, 40));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel14.setText("Contraseña");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 150, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 540, 610));
 
@@ -295,36 +311,11 @@ public class registroUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-private void crear(){
 
-    String archivo = "usuarios.txt"; // Nombre del archivo donde se guardarán todos los registros
-    File crearubi = new File(ubicacion);
-    File crearArchivo = new File(ubicacion + archivo);
-    
-    if (txtNombres.getText().isEmpty() || txtEmail.getText().isEmpty() || txtPassword.getPassword().length == 0) {
-        JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos requeridos.");
-    } else {
-        try {
-            crearubi.mkdirs(); // Crea el directorio si no existe
-            // Verifica si el archivo ya existe
-            if (!crearArchivo.exists()) {
-                crearArchivo.createNewFile(); // Crea el archivo si no existe
-            }
-            
-            // Escribir en el archivo
-            FileWriter fw = new FileWriter(crearArchivo, true); // 'true' para agregar al final del archivo
-            String email = txtEmail.getText();
-            String password = new String(txtPassword.getPassword());
-            fw.write(email + ":" + password + "\n"); // Guarda el correo y la contraseña
-            fw.close();
-            
-            JOptionPane.showMessageDialog(null, "Registro exitoso.");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al registrar el usuario: " + e.getMessage());
-        }
-    }
+  
 
-}
+
+
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
@@ -340,45 +331,38 @@ private void crear(){
     }//GEN-LAST:event_txtNombresKeyTyped
 
     private void btnRegistroxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroxActionPerformed
-        String nombres = txtNombres.getText();
-        String apellidos = txtApellidos.getText();
-        String email = txtEmail.getText();
-        String tipousuario = comboTipoUsuario.getSelectedItem().toString();
-        String contraseña = txtPassword.getText();
-        String confirmarContraseña = txtCPassword.getText();
-        //Validación
-     if (nombres.isEmpty() || apellidos.isEmpty() || email.isEmpty() || contraseña.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Debe completar todos los datos");
-                } else {
-crear();
-limpiar();
-
-
-                    /*if (tipousuario.equalsIgnoreCase("Seleccionar")) {
-                        JOptionPane.showMessageDialog(null, "Seleccione el tipo de usuario");
-                    } else {
-                        if (isEmailC(email) && contraseña.equals(confirmarContraseña) && esContraseñaSegura(contraseña)) {
-                            // Crear un nuevo usuario y agregarlo a la lista
-                            clases.Usuarios nuevoUsuario = new clases.Usuarios(nombres, apellidos, email, tipousuario, contraseña);
-                            clases.Usuarios.add(nuevoUsuario);
-                            limpiar();
-
-                            JOptionPane.showMessageDialog(null, "¡Datos registrados con éxito!");
-                     
-} else {
-                            if (!isEmailC(email)) {
-                                JOptionPane.showMessageDialog(null, "El correo electrónico no es válido");
-                            } else {
-                                if (!esContraseñaSegura(contraseña)) {
-                                    JOptionPane.showMessageDialog(null, "La contraseña debe de contener al menos una letra mayúscula, una minúscula, un número y un carácter especial para garantizar su seguridad, vuelva a intentarlo.");
-                                } else {
-                                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
-                                }
-                    }
-                }
-            }
-        }*/
-     }
+  String nombres = txtNombres.getText();
+    String apellidos = txtApellidos.getText();
+    String email = txtEmail.getText();
+    String numeroTelefono = txtNumeroTelefono.getText();
+    String contraseña = new String(txtPassword.getPassword());
+    String confirmarContraseña = new String(txtCPassword.getPassword());
+    String tipoUsuario = comboTipoUsuario.getSelectedItem().toString();
+    // Validación
+    if (nombres.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Ingrese su nombre");
+    } else if (apellidos.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Ingrese sus apellidos");
+    } else if (email.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Ingrese su correo electrónico");
+    } else if (numeroTelefono.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Ingrese su número de teléfono");
+    } else if (contraseña.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Ingrese su contraseña");
+    } else if (confirmarContraseña.isEmpty()) {
+     JOptionPane.showMessageDialog(null, "Confirme su contraseña");
+    } else if (numeroTelefono.length() != 10) { // Verifica que el número tenga 10 dígitos
+        JOptionPane.showMessageDialog(null, "El número de teléfono debe tener 10 dígitos.");
+    } else if (!contraseña.equals(confirmarContraseña)) { // Verifica que las contraseñas coincidan
+        JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden.");
+    } else if (tipoUsuario.equals("Seleccionar")) { // Verifica que se haya seleccionado un tipo de usuario
+        JOptionPane.showMessageDialog(null, "Seleccione un tipo de usuario.");
+    } else {
+        // Si todas las validaciones son correctas, mostrar mensaje de éxito
+        JOptionPane.showMessageDialog(null, "Usuario registrado con éxito");
+        limpiar(); // Limpiar los campos después del registro
+    }    
+    
     }//GEN-LAST:event_btnRegistroxActionPerformed
 
     private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
@@ -417,10 +401,30 @@ limpiar();
 
     private void regresarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarLoginActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-        new xd().setVisible(true);
-
+      
+   
+        new xd().setVisible(true); // Abre la ventana de inicio de sesión
+        registroUsuario.this.dispose(); // Cierra la ventana de registro
+    
     }//GEN-LAST:event_regresarLoginActionPerformed
+
+    private void txtNumeroTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroTelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeroTelefonoActionPerformed
+
+    private void txtEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailKeyTyped
+
+    private void txtNumeroTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeroTelefonoKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        // Permitir solo dígitos
+        if (!Character.isDigit(c)) {
+            evt.consume(); // No permitir la entrada
+        }
+    
+    }//GEN-LAST:event_txtNumeroTelefonoKeyTyped
         
     public boolean isEmailC(String correox) {
     String EMAIL_PATTERN = 
@@ -495,6 +499,7 @@ limpiar();
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
@@ -512,15 +517,18 @@ limpiar();
     private javax.swing.JPasswordField txtCPassword;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNombres;
+    private javax.swing.JTextField txtNumeroTelefono;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JLabel ver2;
     private javax.swing.JLabel ver3;
     // End of variables declaration//GEN-END:variables
-void limpiar(){
+void limpiar() {
     txtNombres.setText("");
     txtApellidos.setText("");
     txtPassword.setText("");
-    txtEmail.setText(""); 
+    txtEmail.setText("");
     txtCPassword.setText("");
+    txtNumeroTelefono.setText("");
+    comboTipoUsuario.setSelectedIndex(0); // Reiniciar el combo box
 }
 }
