@@ -88,6 +88,7 @@ public class HorariosMuseos extends javax.swing.JFrame {
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         btnMuseoHorario = new javax.swing.JButton();
+        btnRegresar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -105,13 +106,13 @@ public class HorariosMuseos extends javax.swing.JFrame {
         jPanel1.add(btnPrincipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 50));
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnRegresar.setText("Regresar\n");
+        btnRegresar.setText("Acceso Lista");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 120, 60));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 130, 60));
 
         btnAvanzar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAvanzar.setText("Avanzar");
@@ -333,7 +334,16 @@ public class HorariosMuseos extends javax.swing.JFrame {
                 btnMuseoHorarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMuseoHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 210, 50));
+        jPanel1.add(btnMuseoHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, 210, 50));
+
+        btnRegresar1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnRegresar1.setText("Inf. Museos");
+        btnRegresar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresar1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 120, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 480));
 
@@ -368,6 +378,13 @@ public class HorariosMuseos extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnMuseoHorarioActionPerformed
 
+    private void btnRegresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar1ActionPerformed
+        // TODO add your handling code here:
+          InfMuseos infmuseo = new InfMuseos();
+        infmuseo.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresar1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -398,6 +415,7 @@ public class HorariosMuseos extends javax.swing.JFrame {
     private javax.swing.JButton btnMuseoHorario;
     private javax.swing.JButton btnPrincipio;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnRegresar1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

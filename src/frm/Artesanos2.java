@@ -167,6 +167,9 @@ public class Artesanos2 extends javax.swing.JFrame {
 
     private void btnAvanzar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzar1ActionPerformed
         // TODO add your handling code here:
+        InfMuseos infmuseo = new InfMuseos();
+        infmuseo.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAvanzar1ActionPerformed
 
     /**

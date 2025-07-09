@@ -95,14 +95,29 @@ public class DescubreCuenca7 extends javax.swing.JFrame {
 
         btnCIDAP.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnCIDAP.setText("<html>CIDAP<br><small></small></html>");
+        btnCIDAP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCIDAPActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCIDAP, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 180, 80));
 
         btnPRAC.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnPRAC.setText("<html>PRAC - EDEC<br><small></small></html>");
+        btnPRAC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPRACActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPRAC, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 180, 80));
 
         btnCEMUART.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnCEMUART.setText("<html>CEMUART<br><small></small></html>");
+        btnCEMUART.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCEMUARTActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCEMUART, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, 180, 80));
 
         btnConoceMas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -116,6 +131,11 @@ public class DescubreCuenca7 extends javax.swing.JFrame {
 
         btnRotary.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnRotary.setText("<html>Plaza Rotary<br><small></small></html>");
+        btnRotary.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRotaryActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnRotary, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 180, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
@@ -150,6 +170,34 @@ public class DescubreCuenca7 extends javax.swing.JFrame {
         artesanos.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnConoceMasActionPerformed
+
+    private void btnPRACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPRACActionPerformed
+        // TODO add your handling code here:
+        PracEdec pedec = new PracEdec();
+        pedec.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnPRACActionPerformed
+
+    private void btnCEMUARTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCEMUARTActionPerformed
+        // TODO add your handling code here:
+         Cemuart cart = new Cemuart();
+        cart.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCEMUARTActionPerformed
+
+    private void btnRotaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRotaryActionPerformed
+        // TODO add your handling code here:
+         PlazaRotary rotary = new PlazaRotary();
+        rotary.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRotaryActionPerformed
+
+    private void btnCIDAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCIDAPActionPerformed
+        // TODO add your handling code here:
+         Cidap cidap = new Cidap();
+        cidap.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCIDAPActionPerformed
 
     /**
      * @param args the command line arguments

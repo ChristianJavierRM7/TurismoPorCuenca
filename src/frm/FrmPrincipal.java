@@ -43,9 +43,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        txtBienvenida = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Golden Vacation - Sistema de Turismo");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -91,6 +92,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         btnMovilidad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnMovilidad.setText("Movilidad\n");
+        btnMovilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMovilidadActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnMovilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 100, 80));
 
         btnDormir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -211,10 +217,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 80, 50));
 
-        txtBienvenida.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        txtBienvenida.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 130, 30));
-
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -281,6 +283,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btnMovilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovilidadActionPerformed
+        // TODO add your handling code here:
+        Movilidad movilidadCuenca = new Movilidad();
+        movilidadCuenca.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_btnMovilidadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -334,6 +343,5 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel txtBienvenida;
     // End of variables declaration//GEN-END:variables
 }

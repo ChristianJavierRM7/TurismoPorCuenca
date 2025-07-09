@@ -146,8 +146,8 @@ public class MuseoPajaToquilla extends javax.swing.JFrame {
 
     private void btnRegresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar1ActionPerformed
         // TODO add your handling code here:
-        DescubreCuenca3 descubrecuenca3 = new DescubreCuenca3();
-        descubrecuenca3.setVisible(true);
+         ReservaLugares reserva = new ReservaLugares();
+        reserva.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresar1ActionPerformed
 

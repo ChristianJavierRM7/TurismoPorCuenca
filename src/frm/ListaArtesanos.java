@@ -17,6 +17,7 @@ public class ListaArtesanos extends javax.swing.JFrame {
      */
     public ListaArtesanos() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

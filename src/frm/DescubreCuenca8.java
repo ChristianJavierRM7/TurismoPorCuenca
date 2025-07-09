@@ -17,6 +17,7 @@ public class DescubreCuenca8 extends javax.swing.JFrame {
      */
     public DescubreCuenca8() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -95,26 +96,56 @@ public class DescubreCuenca8 extends javax.swing.JFrame {
 
         btnTuri.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnTuri.setText("<html>Turi<br><small></small></html>");
+        btnTuri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTuriActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnTuri, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 80, 40));
 
         btnBoqueron.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnBoqueron.setText("<html>El Boquerón<br><small></small></html>");
+        btnBoqueron.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBoqueronActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnBoqueron, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 120, 70));
 
         btnJalshiNulti.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnJalshiNulti.setText("<html>Jalshi de Nulti<br><small></small></html>");
+        btnJalshiNulti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJalshiNultiActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnJalshiNulti, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 150, 80));
 
         btnCalvario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnCalvario.setText("<html>Mirador El Calvario<br><small></small></html>");
+        btnCalvario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalvarioActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCalvario, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 150, 80));
 
         btnIctoCruz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnIctoCruz.setText("<html>Icto Cruz<br><small></small></html>");
+        btnIctoCruz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIctoCruzActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnIctoCruz, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 100, 80));
 
         btnConoceMas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnConoceMas.setText("<html>Conoce más aquí<br><small></small></html>");
+        btnConoceMas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConoceMasActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnConoceMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 180, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 800, 490));
@@ -142,6 +173,45 @@ public class DescubreCuenca8 extends javax.swing.JFrame {
         descubrecuenca9.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
+
+    private void btnConoceMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConoceMasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConoceMasActionPerformed
+
+    private void btnTuriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTuriActionPerformed
+        // TODO add your handling code here:
+        MiradorTuri turi = new MiradorTuri();
+        turi.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnTuriActionPerformed
+
+    private void btnBoqueronActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoqueronActionPerformed
+        // TODO add your handling code here:
+        MiradorBoqueron boqueron = new MiradorBoqueron();
+        boqueron.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBoqueronActionPerformed
+
+    private void btnJalshiNultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJalshiNultiActionPerformed
+        // TODO add your handling code here:
+        MiradorJalshiNulti jalshi = new MiradorJalshiNulti();
+        jalshi.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnJalshiNultiActionPerformed
+
+    private void btnIctoCruzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIctoCruzActionPerformed
+        // TODO add your handling code here:
+        MiradorIctoCruz icto = new MiradorIctoCruz();
+        icto.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnIctoCruzActionPerformed
+
+    private void btnCalvarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalvarioActionPerformed
+        // TODO add your handling code here:
+        MiradorElCalvario calvario = new MiradorElCalvario();
+        calvario.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCalvarioActionPerformed
 
     /**
      * @param args the command line arguments
