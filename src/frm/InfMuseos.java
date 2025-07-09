@@ -17,6 +17,7 @@ public class InfMuseos extends javax.swing.JFrame {
      */
     public InfMuseos() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -130,15 +131,15 @@ public class InfMuseos extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-        DescubreCuenca7 descubrecuenca7 = new DescubreCuenca7();
-        descubrecuenca7.setVisible(true);
+        Artesanos2 artesanos2 = new Artesanos2();
+        artesanos2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarActionPerformed
         // TODO add your handling code here:
-        Artesanos2 artesanos2 = new Artesanos2();
-        artesanos2.setVisible(true);
+        InfCentrosCulturales centrosCulturales = new InfCentrosCulturales();
+        centrosCulturales.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
 

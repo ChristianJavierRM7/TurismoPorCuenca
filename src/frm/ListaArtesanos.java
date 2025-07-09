@@ -297,8 +297,8 @@ public class ListaArtesanos extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-        DescubreCuenca5 descubrecuenca5 = new DescubreCuenca5();
-        descubrecuenca5.setVisible(true);
+        Artesanos2 artesanos2 = new Artesanos2();
+        artesanos2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 

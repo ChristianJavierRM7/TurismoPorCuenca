@@ -17,6 +17,7 @@ public class InfCentrosCulturales extends javax.swing.JFrame {
      */
     public InfCentrosCulturales() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

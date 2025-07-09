@@ -17,6 +17,7 @@ public class PlazaRotary extends javax.swing.JFrame {
      */
     public PlazaRotary() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

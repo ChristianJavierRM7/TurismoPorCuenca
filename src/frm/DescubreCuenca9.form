@@ -177,9 +177,12 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Corpus Christi Caf&#xe9;&lt;br&gt;&lt;small&gt;&lt;/small&gt;&lt;/html&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCorpusActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="180" width="180" height="80"/>
+              <AbsoluteConstraints x="80" y="200" width="180" height="80"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -190,9 +193,12 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Pan de Horno de Le&#xf1;a - Todos Santos&lt;br&gt;&lt;small&gt;&lt;/small&gt;&lt;/html&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTodosSantosActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="300" width="210" height="80"/>
+              <AbsoluteConstraints x="80" y="320" width="210" height="80"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -203,9 +209,12 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Chocolate amargo&lt;br&gt;&lt;small&gt;&lt;/small&gt;&lt;/html&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChAmargoActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="530" y="290" width="180" height="80"/>
+              <AbsoluteConstraints x="530" y="310" width="180" height="80"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -216,9 +225,12 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;Cervezas artesanales - S&#xe1;n Sebasti&#xe1;n&lt;br&gt;&lt;small&gt;&lt;/small&gt;&lt;/html&gt;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSanSebastianActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="540" y="180" width="180" height="80"/>
+              <AbsoluteConstraints x="540" y="200" width="180" height="80"/>
             </Constraint>
           </Constraints>
         </Component>

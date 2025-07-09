@@ -42,7 +42,6 @@ public class DescubreCuenca8 extends javax.swing.JFrame {
         btnJalshiNulti = new javax.swing.JButton();
         btnCalvario = new javax.swing.JButton();
         btnIctoCruz = new javax.swing.JButton();
-        btnConoceMas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -139,15 +138,6 @@ public class DescubreCuenca8 extends javax.swing.JFrame {
         });
         jPanel1.add(btnIctoCruz, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 100, 80));
 
-        btnConoceMas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnConoceMas.setText("<html>Conoce más aquí<br><small></small></html>");
-        btnConoceMas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConoceMasActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnConoceMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 180, 80));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 800, 490));
 
         pack();
@@ -173,10 +163,6 @@ public class DescubreCuenca8 extends javax.swing.JFrame {
         descubrecuenca9.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
-
-    private void btnConoceMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConoceMasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnConoceMasActionPerformed
 
     private void btnTuriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTuriActionPerformed
         // TODO add your handling code here:
@@ -242,7 +228,6 @@ public class DescubreCuenca8 extends javax.swing.JFrame {
     private javax.swing.JButton btnAvanzar;
     private javax.swing.JButton btnBoqueron;
     private javax.swing.JButton btnCalvario;
-    private javax.swing.JButton btnConoceMas;
     private javax.swing.JButton btnIctoCruz;
     private javax.swing.JButton btnJalshiNulti;
     private javax.swing.JButton btnPrincipio;

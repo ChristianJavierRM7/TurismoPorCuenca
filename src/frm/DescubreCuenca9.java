@@ -104,19 +104,39 @@ public class DescubreCuenca9 extends javax.swing.JFrame {
 
         btnCorpus.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnCorpus.setText("<html>Corpus Christi Café<br><small></small></html>");
-        jPanel1.add(btnCorpus, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 180, 80));
+        btnCorpus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCorpusActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCorpus, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 180, 80));
 
         btnTodosSantos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnTodosSantos.setText("<html>Pan de Horno de Leña - Todos Santos<br><small></small></html>");
-        jPanel1.add(btnTodosSantos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 210, 80));
+        btnTodosSantos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTodosSantosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnTodosSantos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 210, 80));
 
         btnChAmargo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnChAmargo.setText("<html>Chocolate amargo<br><small></small></html>");
-        jPanel1.add(btnChAmargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 180, 80));
+        btnChAmargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChAmargoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnChAmargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 180, 80));
 
         btnSanSebastian.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnSanSebastian.setText("<html>Cervezas artesanales - Sán Sebastián<br><small></small></html>");
-        jPanel1.add(btnSanSebastian, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 180, 80));
+        btnSanSebastian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSanSebastianActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSanSebastian, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 180, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 490));
 
@@ -143,6 +163,33 @@ public class DescubreCuenca9 extends javax.swing.JFrame {
         descubrecuenca10.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
+
+    private void btnCorpusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCorpusActionPerformed
+        // TODO add your handling code here:
+           ResCorpusCafe corpus = new ResCorpusCafe();
+        corpus.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCorpusActionPerformed
+
+    private void btnSanSebastianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSanSebastianActionPerformed
+        // TODO add your handling code here:
+        ResCervezasSanSebas cervezaSebas = new ResCervezasSanSebas();
+        cervezaSebas.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSanSebastianActionPerformed
+
+    private void btnTodosSantosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTodosSantosActionPerformed
+        // TODO add your handling code here:
+        ResPanTodosSantos todossantos = new ResPanTodosSantos();
+        todossantos.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnTodosSantosActionPerformed
+
+    private void btnChAmargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChAmargoActionPerformed
+         resChocolateAmargo chamargo = new resChocolateAmargo();
+        chamargo.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnChAmargoActionPerformed
 
     /**
      * @param args the command line arguments

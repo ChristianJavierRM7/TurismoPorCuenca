@@ -17,6 +17,7 @@ public class PracEdec extends javax.swing.JFrame {
      */
     public PracEdec() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -138,8 +139,8 @@ public class PracEdec extends javax.swing.JFrame {
 
     private void btnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarActionPerformed
         // TODO add your handling code here:
-        MuseoArteModerno museoartemoderno = new MuseoArteModerno();
-        museoartemoderno.setVisible(true);
+        Cemuart cart = new Cemuart();
+        cart.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
 

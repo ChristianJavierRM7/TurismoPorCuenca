@@ -17,6 +17,7 @@ public class Cemuart extends javax.swing.JFrame {
      */
     public Cemuart() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

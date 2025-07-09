@@ -103,15 +103,15 @@ public class infGalerias extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-        InfMuseos infmuseos = new InfMuseos();
-        infmuseos.setVisible(true);
+        InfCentrosCulturales infcentros = new InfCentrosCulturales();
+        infcentros.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        HorariosMuseos hormuseos = new HorariosMuseos();
-        hormuseos.setVisible(true);
+        HorariosGalerias horgalGalerias = new HorariosGalerias();
+        horgalGalerias.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
