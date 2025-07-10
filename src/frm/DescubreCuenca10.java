@@ -91,6 +91,11 @@ public class DescubreCuenca10 extends javax.swing.JFrame {
 
         btnEntretenimientoPro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnEntretenimientoPro.setText("<html>Conoce las actividades próximas a realizarse aquí<br><small></small></html>");
+        btnEntretenimientoPro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntretenimientoProActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnEntretenimientoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 200, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 480));
@@ -118,6 +123,13 @@ public class DescubreCuenca10 extends javax.swing.JFrame {
         descubrecuenca11.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
+
+    private void btnEntretenimientoProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntretenimientoProActionPerformed
+        // TODO add your handling code here:
+        proximoCuenca proxCuenca = new proximoCuenca();
+        proxCuenca.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnEntretenimientoProActionPerformed
 
     /**
      * @param args the command line arguments

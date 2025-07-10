@@ -149,8 +149,8 @@ public class CuandoVenir4 extends javax.swing.JFrame {
 
     private void btnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarActionPerformed
         // TODO add your handling code here:
-        DescubreCuenca5 descubrecuenca5 = new DescubreCuenca5();
-        descubrecuenca5.setVisible(true);
+        CuandoVenir5 cvenir5 = new CuandoVenir5();
+        cvenir5.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
 

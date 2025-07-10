@@ -75,7 +75,6 @@ DefaultTableModel modelo;
 
         jPanel1 = new javax.swing.JPanel();
         btnPrincipio = new javax.swing.JButton();
-        btnRegresar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
@@ -115,15 +114,6 @@ DefaultTableModel modelo;
             }
         });
         jPanel1.add(btnPrincipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 50));
-
-        btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnRegresar.setText("Atrás");
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 70, 60));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -259,13 +249,6 @@ DefaultTableModel modelo;
         this.dispose();
     }//GEN-LAST:event_btnPrincipioActionPerformed
 
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        // TODO add your handling code here:
-        MuseoRemigioCrespo museoremigiocrespo = new MuseoRemigioCrespo();
-        museoremigiocrespo.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnRegresarActionPerformed
-
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int filaSeleccionada = tablita.getSelectedRow();
     
@@ -392,6 +375,9 @@ private void ordenarPorTipo() {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        VerGuias guias = new VerGuias();
+        guias.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -424,7 +410,6 @@ private void ordenarPorTipo() {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnOrdenar;
     private javax.swing.JButton btnPrincipio;
-    private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cbArtesania;
     private javax.swing.JComboBox<String> cbCafeterias;
     private javax.swing.JComboBox<String> cbMercados;

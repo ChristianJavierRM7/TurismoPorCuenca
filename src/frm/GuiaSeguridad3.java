@@ -17,6 +17,7 @@ public class GuiaSeguridad3 extends javax.swing.JFrame {
      */
     public GuiaSeguridad3() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -153,8 +154,8 @@ public class GuiaSeguridad3 extends javax.swing.JFrame {
 
     private void btnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarActionPerformed
         // TODO add your handling code here:
-        GuiaSeguridad4 guiaseguridad4 = new GuiaSeguridad4();
-        guiaseguridad4.setVisible(true);
+        GuiaSeguridad5 guiaseguridad5 = new GuiaSeguridad5();
+        guiaseguridad5.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
 

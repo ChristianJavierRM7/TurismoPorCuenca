@@ -17,6 +17,7 @@ public class GuiaSeguridad6 extends javax.swing.JFrame {
      */
     public GuiaSeguridad6() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -62,6 +63,11 @@ public class GuiaSeguridad6 extends javax.swing.JFrame {
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnRegresar.setText("Regresar\n");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 120, 60));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -140,6 +146,13 @@ public class GuiaSeguridad6 extends javax.swing.JFrame {
         quevisitarcuenca.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnPrincipioActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:\
+        GuiaSeguridad5 gsegu5 = new GuiaSeguridad5();
+        gsegu5.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -38,7 +38,6 @@ public class FoodTrip1 extends javax.swing.JFrame {
         btnVFamilia2 = new javax.swing.JButton();
         btnVFamilia3 = new javax.swing.JButton();
         btnVFamilia4 = new javax.swing.JButton();
-        btnAvanzar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,7 +70,7 @@ public class FoodTrip1 extends javax.swing.JFrame {
                 btnVFamiliaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVFamilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 230, 130));
+        jPanel1.add(btnVFamilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 230, 130));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,16 +111,7 @@ public class FoodTrip1 extends javax.swing.JFrame {
                 btnVFamilia4ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVFamilia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 180, 80));
-
-        btnAvanzar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnAvanzar.setText("Avanzar");
-        btnAvanzar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAvanzarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAvanzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, 120, 60));
+        jPanel1.add(btnVFamilia4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 180, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 490));
 
@@ -148,26 +138,29 @@ public class FoodTrip1 extends javax.swing.JFrame {
 
     private void btnVFamilia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFamilia1ActionPerformed
         // TODO add your handling code here:
+        SemanaSanta1 comsanta = new SemanaSanta1();
+        comsanta.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVFamilia1ActionPerformed
 
     private void btnVFamilia2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFamilia2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVFamilia2ActionPerformed
+TruchaMiguir1 trucha1 = new TruchaMiguir1();
+        trucha1.setVisible(true);
+        this.dispose();    }//GEN-LAST:event_btnVFamilia2ActionPerformed
 
     private void btnVFamilia3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFamilia3ActionPerformed
         // TODO add your handling code here:
+        ExpGasCuenca expgas = new ExpGasCuenca();
+        expgas.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVFamilia3ActionPerformed
 
     private void btnVFamilia4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFamilia4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnVFamilia4ActionPerformed
-
-    private void btnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarActionPerformed
-        // TODO add your handling code here:
-         FoodTrip2 foodtrip2 = new FoodTrip2();
-        foodtrip2.setVisible(true);
+        CafeCentroHistorico cafeCentro = new CafeCentroHistorico();
+        cafeCentro.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnAvanzarActionPerformed
+    }//GEN-LAST:event_btnVFamilia4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,7 +188,6 @@ public class FoodTrip1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAvanzar;
     private javax.swing.JButton btnPrincipio;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnVFamilia;

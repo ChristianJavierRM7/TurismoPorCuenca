@@ -17,6 +17,7 @@ public class GuiaSeguridad5 extends javax.swing.JFrame {
      */
     public GuiaSeguridad5() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -79,10 +80,20 @@ public class GuiaSeguridad5 extends javax.swing.JFrame {
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnRegresar.setText("Regresar\n");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 120, 60));
 
         btnAvanzar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAvanzar.setText("Avanzar");
+        btnAvanzar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAvanzarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAvanzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, 120, 60));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -151,6 +162,20 @@ public class GuiaSeguridad5 extends javax.swing.JFrame {
         quevisitarcuenca.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnPrincipioActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        GuiaSeguridad3 gsegu3 = new GuiaSeguridad3();
+        gsegu3.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarActionPerformed
+        // TODO add your handling code here:
+        GuiaSeguridad6 gsegu6 = new GuiaSeguridad6();
+        gsegu6.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAvanzarActionPerformed
 
     /**
      * @param args the command line arguments

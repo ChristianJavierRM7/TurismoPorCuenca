@@ -81,6 +81,11 @@ public class QueVisitarCuenca extends javax.swing.JFrame {
 
         btnExperienciasTrip.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnExperienciasTrip.setText("<html>Experiencias<br><small>Trip</small></html>");
+        btnExperienciasTrip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExperienciasTripActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnExperienciasTrip, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 120, 60));
 
         btnVAventuras6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -97,6 +102,11 @@ public class QueVisitarCuenca extends javax.swing.JFrame {
 
         btnActCuenca1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnActCuenca1.setText("<html>Actividades<br><small>en Cuenca</small></html>");
+        btnActCuenca1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActCuenca1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnActCuenca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, 120, 60));
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -133,6 +143,19 @@ public class QueVisitarCuenca extends javax.swing.JFrame {
         cuandovenir1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCuandoVenirActionPerformed
+
+    private void btnExperienciasTripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExperienciasTripActionPerformed
+          ExperienciasTrip experienciasTrip = new ExperienciasTrip();
+        experienciasTrip.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnExperienciasTripActionPerformed
+
+    private void btnActCuenca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActCuenca1ActionPerformed
+        // TODO add your handling code here:
+        proximoCuenca proCuenca = new proximoCuenca();
+        proCuenca.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnActCuenca1ActionPerformed
 
     /**
      * @param args the command line arguments

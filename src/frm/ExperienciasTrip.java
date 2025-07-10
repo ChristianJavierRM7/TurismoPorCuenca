@@ -17,6 +17,7 @@ public class ExperienciasTrip extends javax.swing.JFrame {
      */
     public ExperienciasTrip() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -35,12 +36,7 @@ public class ExperienciasTrip extends javax.swing.JFrame {
         btnVAventuras = new javax.swing.JButton();
         btnVGastronomia = new javax.swing.JButton();
         btnVCultura = new javax.swing.JButton();
-        btnVNegocios = new javax.swing.JButton();
-        btnVDeportes = new javax.swing.JButton();
         btnVFamilia = new javax.swing.JButton();
-        btnVRelajarse = new javax.swing.JButton();
-        btnVCompras = new javax.swing.JButton();
-        btnVAmor = new javax.swing.JButton();
         btnVFiestas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,7 +70,12 @@ public class ExperienciasTrip extends javax.swing.JFrame {
 
         btnVAventuras.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVAventuras.setText("<html>Viaje por<br><small>Aventuras</small></html>");
-        jPanel1.add(btnVAventuras, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 110, 60));
+        btnVAventuras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVAventurasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnVAventuras, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 110, 60));
 
         btnVGastronomia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVGastronomia.setText("<html>Viaje por<br><small>Gastronomía</small></html>");
@@ -83,29 +84,11 @@ public class ExperienciasTrip extends javax.swing.JFrame {
                 btnVGastronomiaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVGastronomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 110, 60));
+        jPanel1.add(btnVGastronomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 110, 60));
 
         btnVCultura.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVCultura.setText("<html>Viaje por<br><small>Cultura</small></html>");
-        jPanel1.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 110, 60));
-
-        btnVNegocios.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVNegocios.setText("<html>Viaje por<br><small>Negocios</small></html>");
-        btnVNegocios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVNegociosActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnVNegocios, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 110, 60));
-
-        btnVDeportes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVDeportes.setText("<html>Viaje por<br><small>Deportes</small></html>");
-        btnVDeportes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVDeportesActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnVDeportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 130, 60));
+        jPanel1.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, 110, 60));
 
         btnVFamilia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVFamilia.setText("<html>Viaje con<br><small>Familia</small></html>");
@@ -114,34 +97,7 @@ public class ExperienciasTrip extends javax.swing.JFrame {
                 btnVFamiliaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVFamilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 130, 60));
-
-        btnVRelajarse.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVRelajarse.setText("<html>Viaje para<br><small>Relajarse</small></html>");
-        btnVRelajarse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVRelajarseActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnVRelajarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, 130, 60));
-
-        btnVCompras.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVCompras.setText("<html>Viaje por<br><small>Compras</small></html>");
-        btnVCompras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVComprasActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnVCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 130, 60));
-
-        btnVAmor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVAmor.setText("<html>Viaje por<br><small>Amor</small></html>");
-        btnVAmor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVAmorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnVAmor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 130, 60));
+        jPanel1.add(btnVFamilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 130, 60));
 
         btnVFiestas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVFiestas.setText("<html>Viaje por<br><small>Fiestas</small></html>");
@@ -150,7 +106,7 @@ public class ExperienciasTrip extends javax.swing.JFrame {
                 btnVFiestasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVFiestas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 130, 60));
+        jPanel1.add(btnVFiestas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 130, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 490));
 
@@ -171,29 +127,9 @@ public class ExperienciasTrip extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void btnVNegociosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVNegociosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVNegociosActionPerformed
-
-    private void btnVDeportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVDeportesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVDeportesActionPerformed
-
     private void btnVFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFamiliaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVFamiliaActionPerformed
-
-    private void btnVRelajarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVRelajarseActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVRelajarseActionPerformed
-
-    private void btnVComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVComprasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVComprasActionPerformed
-
-    private void btnVAmorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVAmorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVAmorActionPerformed
 
     private void btnVFiestasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFiestasActionPerformed
         // TODO add your handling code here:
@@ -201,8 +137,17 @@ public class ExperienciasTrip extends javax.swing.JFrame {
 
     private void btnVGastronomiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVGastronomiaActionPerformed
         // TODO add your handling code here:
-        
+        FoodTrip1 food1 = new FoodTrip1();
+        food1.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVGastronomiaActionPerformed
+
+    private void btnVAventurasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVAventurasActionPerformed
+        // TODO add your handling code here:
+         AventuraTrip aventura = new AventuraTrip();
+        aventura.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVAventurasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,16 +177,11 @@ public class ExperienciasTrip extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPrincipio;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JButton btnVAmor;
     private javax.swing.JButton btnVAventuras;
-    private javax.swing.JButton btnVCompras;
     private javax.swing.JButton btnVCultura;
-    private javax.swing.JButton btnVDeportes;
     private javax.swing.JButton btnVFamilia;
     private javax.swing.JButton btnVFiestas;
     private javax.swing.JButton btnVGastronomia;
-    private javax.swing.JButton btnVNegocios;
-    private javax.swing.JButton btnVRelajarse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
