@@ -1,5 +1,12 @@
 Cafeterias,Café del Zaguán,Sun Jul 13 19:12:33 GMT-05:00 2025
-Patrimonios,Casa Patrimonial Municipal del Alfarero,Sun Jul 27 19:13:05 GMT-05:00 2025
-Mercados,Mercado 9 de Octubre,Sun Jul 27 19:15:24 GMT-05:00 2025
 Cafeterias,Dulcet,Sat Jul 26 19:20:33 GMT-05:00 2025
+Cafeterias,Café de San Sebas,Sat Jul 26 19:24:14 GMT-05:00 2025
+Hoteles,Hotel Oro Verde Cuenca,Sun Jul 20 19:21:32 GMT-05:00 2025
+Mercados,Mercado 9 de Octubre,Sun Jul 27 19:15:24 GMT-05:00 2025
 Termales,Novaqua Spa,Sat Jul 26 08:12:30 GMT-05:00 2025
+Restaurantes,Cocotte - Mansión Alcázar ,Sat Jul 26 19:24:42 GMT-05:00 2025
+Iglesias,Iglesia de San Alfonso,Sun Jul 27 19:25:35 GMT-05:00 2025
+Parques,Iglesia de San Blas,Sat Jul 26 19:28:35 GMT-05:00 2025
+Cultura,Sala Proceso,Sun Jul 27 19:33:34 GMT-05:00 2025
+Restaurantes,Café del Museo,Sun Jul 20 19:42:54 GMT-05:00 2025
+Restaurantes,Tiesto’s Café-Restaurant,Sun Jul 20 19:45:40 GMT-05:00 2025

@@ -3,10 +3,7 @@ package frm;
 public class FrmPrincipal extends javax.swing.JFrame {
         private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmPrincipal.class.getName());
     public FrmPrincipal() {
-       
-       
         initComponents();
-        
         setLocationRelativeTo(null);
         
     }
@@ -28,10 +25,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnVGastronomia = new javax.swing.JButton();
         btnVCultura = new javax.swing.JButton();
         btnVAventuras = new javax.swing.JButton();
-        btnNoticias = new javax.swing.JButton();
         btnBlog = new javax.swing.JButton();
         btnVFiestas = new javax.swing.JButton();
-        btnVFamilia = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -56,6 +51,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         btnComer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnComer.setText("<html>¿Dónde<br><small>Comer?</small></html>");
+        btnComer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComerActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnComer, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 90, 80));
 
         btnContratarGuia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -110,22 +110,33 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 btnVGastronomiaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVGastronomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 110, 60));
+        jPanel2.add(btnVGastronomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 110, 60));
 
         btnVCultura.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVCultura.setText("<html>Viaje por<br><small>Cultura</small></html>");
-        jPanel2.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 110, 60));
+        btnVCultura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVCulturaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 110, 60));
 
         btnVAventuras.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVAventuras.setText("<html>Viaje por Aventuras<br><small></small></html>");
+        btnVAventuras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVAventurasActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnVAventuras, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 110, 60));
-
-        btnNoticias.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnNoticias.setText("Noticias");
-        jPanel2.add(btnNoticias, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 80, 80));
 
         btnBlog.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnBlog.setText("<html>Blog<br><small>Turistico</small></html>");
+        btnBlog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBlogActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnBlog, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 80, 80));
 
         btnVFiestas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -136,15 +147,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnVFiestas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 130, 60));
-
-        btnVFamilia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVFamilia.setText("<html>Viaje con<br><small>Familia</small></html>");
-        btnVFamilia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVFamiliaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnVFamilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 130, 60));
 
         btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCerrarSesion.setText("<html>Cerrar sesión<br><small></small></html>");
@@ -172,7 +174,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 80, 50));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 80, 80));
 
         jButton1.setText("MAPA");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +182,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 80, 50));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 80, 50));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -191,14 +193,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         // TODO add your handling code here:
+          xd login = new xd();
+        login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
-
-    private void btnVFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFamiliaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVFamiliaActionPerformed
 
     private void btnVFiestasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFiestasActionPerformed
         // TODO add your handling code here:
+        FiestaTrip1 fiesta = new FiestaTrip1();
+        fiesta.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVFiestasActionPerformed
 
     private void btnQueVisitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQueVisitarActionPerformed
@@ -256,6 +260,34 @@ public class FrmPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnDormirActionPerformed
 
+    private void btnVCulturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVCulturaActionPerformed
+        // TODO add your handling code here:
+         CultureTrip1 culturetrip = new CultureTrip1();
+        culturetrip.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVCulturaActionPerformed
+
+    private void btnComerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComerActionPerformed
+        // TODO add your handling code here:
+        DondeComer2 dondeComer2 = new DondeComer2();
+        dondeComer2.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnComerActionPerformed
+
+    private void btnVAventurasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVAventurasActionPerformed
+        // TODO add your handling code here:
+        AventuraTrip aventura = new AventuraTrip();
+        aventura.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVAventurasActionPerformed
+
+    private void btnBlogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBlogActionPerformed
+        // TODO add your handling code here:
+        DescubreCuenca1 descubreCuenca1 = new DescubreCuenca1();
+        descubreCuenca1.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBlogActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -289,11 +321,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnContratarGuia;
     private javax.swing.JButton btnDormir;
     private javax.swing.JButton btnMovilidad;
-    private javax.swing.JButton btnNoticias;
     private javax.swing.JButton btnQueVisitar;
     private javax.swing.JButton btnVAventuras;
     private javax.swing.JButton btnVCultura;
-    private javax.swing.JButton btnVFamilia;
     private javax.swing.JButton btnVFiestas;
     private javax.swing.JButton btnVGastronomia;
     private javax.swing.JButton jButton1;

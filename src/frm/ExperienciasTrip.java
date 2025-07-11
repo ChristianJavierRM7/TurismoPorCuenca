@@ -36,7 +36,6 @@ public class ExperienciasTrip extends javax.swing.JFrame {
         btnVAventuras = new javax.swing.JButton();
         btnVGastronomia = new javax.swing.JButton();
         btnVCultura = new javax.swing.JButton();
-        btnVFamilia = new javax.swing.JButton();
         btnVFiestas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,7 +74,7 @@ public class ExperienciasTrip extends javax.swing.JFrame {
                 btnVAventurasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVAventuras, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 110, 60));
+        jPanel1.add(btnVAventuras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 110, 60));
 
         btnVGastronomia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVGastronomia.setText("<html>Viaje por<br><small>Gastronomía</small></html>");
@@ -84,20 +83,16 @@ public class ExperienciasTrip extends javax.swing.JFrame {
                 btnVGastronomiaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVGastronomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 110, 60));
+        jPanel1.add(btnVGastronomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 110, 60));
 
         btnVCultura.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVCultura.setText("<html>Viaje por<br><small>Cultura</small></html>");
-        jPanel1.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, 110, 60));
-
-        btnVFamilia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVFamilia.setText("<html>Viaje con<br><small>Familia</small></html>");
-        btnVFamilia.addActionListener(new java.awt.event.ActionListener() {
+        btnVCultura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVFamiliaActionPerformed(evt);
+                btnVCulturaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVFamilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 130, 60));
+        jPanel1.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 110, 60));
 
         btnVFiestas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVFiestas.setText("<html>Viaje por<br><small>Fiestas</small></html>");
@@ -127,12 +122,11 @@ public class ExperienciasTrip extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void btnVFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFamiliaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVFamiliaActionPerformed
-
     private void btnVFiestasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFiestasActionPerformed
         // TODO add your handling code here:
+          FiestaTrip1 fiesta = new FiestaTrip1();
+        fiesta.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVFiestasActionPerformed
 
     private void btnVGastronomiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVGastronomiaActionPerformed
@@ -148,6 +142,13 @@ public class ExperienciasTrip extends javax.swing.JFrame {
         aventura.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVAventurasActionPerformed
+
+    private void btnVCulturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVCulturaActionPerformed
+        // TODO add your handling code here:
+        CultureTrip1 culturetrip = new CultureTrip1();
+        culturetrip.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVCulturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,7 +180,6 @@ public class ExperienciasTrip extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnVAventuras;
     private javax.swing.JButton btnVCultura;
-    private javax.swing.JButton btnVFamilia;
     private javax.swing.JButton btnVFiestas;
     private javax.swing.JButton btnVGastronomia;
     private javax.swing.JLabel jLabel1;

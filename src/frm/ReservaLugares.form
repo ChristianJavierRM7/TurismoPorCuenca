@@ -98,7 +98,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="380" y="410" width="100" height="60"/>
+              <AbsoluteConstraints x="280" y="410" width="100" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -158,36 +158,6 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cbTipo">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="11">
-                <StringItem index="0" value="Seleccionar"/>
-                <StringItem index="1" value="Museos"/>
-                <StringItem index="2" value="Restaurantes"/>
-                <StringItem index="3" value="Cafeterias"/>
-                <StringItem index="4" value="Mercados"/>
-                <StringItem index="5" value="Miradores"/>
-                <StringItem index="6" value="Termales"/>
-                <StringItem index="7" value="Patrimonios"/>
-                <StringItem index="8" value="Artesania"/>
-                <StringItem index="9" value=" "/>
-                <StringItem index="10" value=" "/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbTipoActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="100" y="90" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -209,16 +179,16 @@
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="11">
                 <StringItem index="0" value="Seleccionar"/>
-                <StringItem index="1" value="Tiestos restaurante"/>
-                <StringItem index="2" value="Dos Sucres"/>
-                <StringItem index="3" value="Negroni Cuenca"/>
-                <StringItem index="4" value="El Mercado"/>
-                <StringItem index="5" value="Cocotte - Mansi&#xf3;n Alc&#xe1;zar "/>
-                <StringItem index="6" value="Restaurante Santa Luc&#xed;a"/>
-                <StringItem index="7" value="Capit&#xe1;n Restaurante"/>
-                <StringItem index="8" value="La Mar&#xed;a Cocina Libre"/>
-                <StringItem index="9" value="La Chicher&#xed;a"/>
-                <StringItem index="10" value="Punjabi Rasoi"/>
+                <StringItem index="1" value="Tiesto&#x2019;s Caf&#xe9;-Restaurant"/>
+                <StringItem index="2" value="El Mercado"/>
+                <StringItem index="3" value="Raymipampa"/>
+                <StringItem index="4" value="Caf&#xe9; del Museo"/>
+                <StringItem index="5" value="Dos Sucres"/>
+                <StringItem index="6" value="Goza Espresso Bar"/>
+                <StringItem index="7" value="La Mar&#xed;a Cocina de Huerta"/>
+                <StringItem index="8" value="Jodoco Belgian Bistro"/>
+                <StringItem index="9" value="Fabianos Pizzer&#xed;a"/>
+                <StringItem index="10" value="Caf&#xe9; San Sebas"/>
               </StringArray>
             </Property>
           </Properties>
@@ -250,7 +220,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="210" y="410" width="100" height="60"/>
+              <AbsoluteConstraints x="120" y="410" width="100" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -314,12 +284,20 @@
         <Component class="javax.swing.JComboBox" name="cbMercados">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="13">
                 <StringItem index="0" value="Seleccionar"/>
-                <StringItem index="1" value="Mercado 12 de Abril"/>
-                <StringItem index="2" value="Mercado 10 de Agosto"/>
-                <StringItem index="3" value="Mercado 9 de Octubre"/>
-                <StringItem index="4" value="Mercado 3 de Noviembre"/>
+                <StringItem index="1" value="Mall del R&#xed;o"/>
+                <StringItem index="2" value="Milenium Plaza"/>
+                <StringItem index="3" value="Mall Monay Shopping"/>
+                <StringItem index="4" value="Mercado 10 de Agosto"/>
+                <StringItem index="5" value="Mercado 9 de Octubre"/>
+                <StringItem index="6" value="Plaza Rotary"/>
+                <StringItem index="7" value="Mercado El Arenal"/>
+                <StringItem index="8" value="Mercado 27 de Febrero"/>
+                <StringItem index="9" value="Centro Comercial El Vergel"/>
+                <StringItem index="10" value="Mercado de Artesan&#xed;as CIDAP"/>
+                <StringItem index="11" value=" "/>
+                <StringItem index="12" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -379,13 +357,18 @@
         <Component class="javax.swing.JComboBox" name="cbMiradores">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
+              <StringArray count="11">
                 <StringItem index="0" value="Seleccionar"/>
-                <StringItem index="1" value="Turi"/>
-                <StringItem index="2" value="Icto Cruz"/>
-                <StringItem index="3" value="El Boquer&#xf3;n"/>
-                <StringItem index="4" value="Jalshi de Nulti"/>
-                <StringItem index="5" value="Mirador El Calvario"/>
+                <StringItem index="1" value="Mirador de Turi"/>
+                <StringItem index="2" value="Parque Nacional Cajas"/>
+                <StringItem index="3" value="Mirador El Calvario"/>
+                <StringItem index="4" value="Mirador Icto Cruz"/>
+                <StringItem index="5" value="Mirador Jalshi de Nulti"/>
+                <StringItem index="6" value="El Boquer&#xf3;n"/>
+                <StringItem index="7" value="R&#xed;o Tomebamba"/>
+                <StringItem index="8" value="Zool&#xf3;gico Yurak Allpa"/>
+                <StringItem index="9" value="Amaru Bioparque"/>
+                <StringItem index="10" value="Sendero de El Cajas &#x2013; Laguna Toreadora"/>
               </StringArray>
             </Property>
           </Properties>
@@ -423,22 +406,6 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI Black" size="12" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Elija el tipo"/>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="100" y="130" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
         <Component class="javax.swing.JButton" name="btnOrdenar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -451,7 +418,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="520" y="410" width="160" height="60"/>
+              <AbsoluteConstraints x="410" y="410" width="160" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -494,6 +461,162 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="450" y="140" width="130" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbHoteles">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="11">
+                <StringItem index="0" value="Seleccionar"/>
+                <StringItem index="1" value="Hotel Oro Verde Cuenca"/>
+                <StringItem index="2" value="Mansi&#xf3;n Alc&#xe1;zar"/>
+                <StringItem index="3" value="Hotel Carvallo"/>
+                <StringItem index="4" value="Four Points by Sheraton Cuenca"/>
+                <StringItem index="5" value="Hotel Boutique Santa Luc&#xed;a"/>
+                <StringItem index="6" value="Hotel Cruz del Vado"/>
+                <StringItem index="7" value="San Juan Hotel"/>
+                <StringItem index="8" value="Hotel Victoria"/>
+                <StringItem index="9" value="Hotel El Conquistador"/>
+                <StringItem index="10" value="Hotel Forum"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="100" y="130" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbIglesias">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="11">
+                <StringItem index="0" value="Seleccionar"/>
+                <StringItem index="1" value="Catedral Nueva (Inmaculada Concepci&#xf3;n)"/>
+                <StringItem index="2" value="Catedral Vieja (El Sagrario)"/>
+                <StringItem index="3" value="Iglesia de Santo Domingo"/>
+                <StringItem index="4" value="Iglesia de San Blas"/>
+                <StringItem index="5" value="Iglesia de San Alfonso"/>
+                <StringItem index="6" value="Iglesia de San Sebasti&#xe1;n"/>
+                <StringItem index="7" value="Iglesia del Cen&#xe1;culo"/>
+                <StringItem index="8" value="Iglesia de Todos Santos"/>
+                <StringItem index="9" value="Iglesia de El Vergel"/>
+                <StringItem index="10" value="Iglesia de La Merced"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="100" y="130" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbParques">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="11">
+                <StringItem index="0" value="Seleccionar"/>
+                <StringItem index="1" value="Parque Calder&#xf3;n"/>
+                <StringItem index="2" value="Parque de La Madre"/>
+                <StringItem index="3" value="Parque El Para&#xed;so"/>
+                <StringItem index="4" value="Parque Lineal Yanuncay"/>
+                <StringItem index="5" value="Plaza San Francisco"/>
+                <StringItem index="6" value="Plaza del Otorongo"/>
+                <StringItem index="7" value="Plaza Rotary"/>
+                <StringItem index="8" value="Parque Miraflores"/>
+                <StringItem index="9" value="Parque La Libertad"/>
+                <StringItem index="10" value="Parque Luis Cordero"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="100" y="130" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbTipo">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="13">
+                <StringItem index="0" value="Seleccionar"/>
+                <StringItem index="1" value="Museos"/>
+                <StringItem index="2" value="Restaurantes"/>
+                <StringItem index="3" value="Cafeterias"/>
+                <StringItem index="4" value="Mercados"/>
+                <StringItem index="5" value="Miradores"/>
+                <StringItem index="6" value="Termales"/>
+                <StringItem index="7" value="Patrimonios"/>
+                <StringItem index="8" value="Artesania"/>
+                <StringItem index="9" value="Hoteles"/>
+                <StringItem index="10" value="Iglesias"/>
+                <StringItem index="11" value="Parques"/>
+                <StringItem index="12" value="Cultura"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbTipoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="100" y="90" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbCultura">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="11">
+                <StringItem index="0" value="Seleccionar"/>
+                <StringItem index="1" value="Teatro Casa de la Cultura"/>
+                <StringItem index="2" value="Teatro Pumapungo"/>
+                <StringItem index="3" value="Teatro Sucre"/>
+                <StringItem index="4" value="Centro Cultural CIDAP"/>
+                <StringItem index="5" value="Sala Proceso"/>
+                <StringItem index="6" value="Casa de los Arcos"/>
+                <StringItem index="7" value="Museo de Arte Moderno (tambi&#xe9;n sede de teatro)"/>
+                <StringItem index="8" value="Centro Cultural El &#xc1;ngel"/>
+                <StringItem index="9" value="Centro Cultural El Alfarero"/>
+                <StringItem index="10" value="La Guarida"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="100" y="130" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Black" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Elija el tipo"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="100" y="130" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

@@ -10,6 +10,12 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+
 
 public class ReservaLugares extends javax.swing.JFrame {
     
@@ -31,6 +37,10 @@ DefaultTableModel modelo;
     cbTermales.setVisible(false);
     cbPatrimonios.setVisible(false);
     cbArtesania.setVisible(false);
+    cbHoteles.setVisible(false);
+    cbIglesias.setVisible(false);
+    cbParques.setVisible(false);
+    cbCultura.setVisible(false);
     cargarDatosDesdeArchivo();
     }
     private void cargarDatosDesdeArchivo() {
@@ -82,7 +92,6 @@ DefaultTableModel modelo;
         tablita = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        cbTipo = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         cbRestaurantes = new javax.swing.JComboBox<>();
         txtFecha = new com.toedter.calendar.JDateChooser();
@@ -94,11 +103,16 @@ DefaultTableModel modelo;
         cbArtesania = new javax.swing.JComboBox<>();
         cbMiradores = new javax.swing.JComboBox<>();
         cbPatrimonios = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
         btnOrdenar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        cbHoteles = new javax.swing.JComboBox<>();
+        cbIglesias = new javax.swing.JComboBox<>();
+        cbParques = new javax.swing.JComboBox<>();
+        cbTipo = new javax.swing.JComboBox<>();
+        cbCultura = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -131,7 +145,7 @@ DefaultTableModel modelo;
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 100, 60));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 100, 60));
 
         tablita.setBackground(new java.awt.Color(204, 255, 153));
         tablita.setModel(new javax.swing.table.DefaultTableModel(
@@ -159,20 +173,12 @@ DefaultTableModel modelo;
         jLabel3.setText("Tipo:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
-        cbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Museos", "Restaurantes", "Cafeterias", "Mercados", "Miradores", "Termales", "Patrimonios", "Artesania", " ", " " }));
-        cbTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbTipoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cbTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
-
         jLabel4.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Lugar:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
 
-        cbRestaurantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Tiestos restaurante", "Dos Sucres", "Negroni Cuenca", "El Mercado", "Cocotte - Mansión Alcázar ", "Restaurante Santa Lucía", "Capitán Restaurante", "La María Cocina Libre", "La Chichería", "Punjabi Rasoi" }));
+        cbRestaurantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Tiesto’s Café-Restaurant", "El Mercado", "Raymipampa", "Café del Museo", "Dos Sucres", "Goza Espresso Bar", "La María Cocina de Huerta", "Jodoco Belgian Bistro", "Fabianos Pizzería", "Café San Sebas" }));
         jPanel1.add(cbRestaurantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
         jPanel1.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
 
@@ -183,7 +189,7 @@ DefaultTableModel modelo;
                 btnAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 100, 60));
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 100, 60));
 
         cbMuseos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Museo de Arte Moderno", "Casa Museo La Condamine", "Museo del Sombrero de Paja Toquilla", "Museo Universitario", "Museo Historia de La Medicina", "Casa Museo Remigio Crespo Toral ", "Museo de las Artes Populares De America", "Museo de las Culturas Aborigenes", "Museo y Parque Ancestral Pumapungo", "Museo de la Gastronomia Ecuatoriana", "Museo Catedral Vieja", "Museo del Sombrero Homero Ortega", "Museo Municipal de la Paja Toquilla y el Sombrero", "Museo de La Ciudad", "Amalia Uriguen", "Museo del Cacao", "Museo de las Conceptas", "Museo de antigüedades “Zoila Quezada”" }));
         jPanel1.add(cbMuseos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
@@ -191,7 +197,7 @@ DefaultTableModel modelo;
         cbCafeterias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Café de la Sucre", "Café del Zaguán", "Café de San Sebas", "Dulcet", "Paccari" }));
         jPanel1.add(cbCafeterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
 
-        cbMercados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Mercado 12 de Abril", "Mercado 10 de Agosto", "Mercado 9 de Octubre", "Mercado 3 de Noviembre" }));
+        cbMercados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Mall del Río", "Milenium Plaza", "Mall Monay Shopping", "Mercado 10 de Agosto", "Mercado 9 de Octubre", "Plaza Rotary", "Mercado El Arenal", "Mercado 27 de Febrero", "Centro Comercial El Vergel", "Mercado de Artesanías CIDAP", " ", " " }));
         jPanel1.add(cbMercados, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
 
         cbTermales.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Piedra de Agua", "Hosteria y Balneario Durán", "Hosteria Termal Rodas", "Novaqua Spa", "Hosteria Agapantos", "Balneario Riñón" }));
@@ -200,16 +206,11 @@ DefaultTableModel modelo;
         cbArtesania.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "PRAC - EDEC", "CEMUART", "Plaza Rotary", "CIDAP" }));
         jPanel1.add(cbArtesania, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
 
-        cbMiradores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Turi", "Icto Cruz", "El Boquerón", "Jalshi de Nulti", "Mirador El Calvario" }));
+        cbMiradores.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Mirador de Turi", "Parque Nacional Cajas", "Mirador El Calvario", "Mirador Icto Cruz", "Mirador Jalshi de Nulti", "El Boquerón", "Río Tomebamba", "Zoológico Yurak Allpa", "Amaru Bioparque", "Sendero de El Cajas – Laguna Toreadora" }));
         jPanel1.add(cbMiradores, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
 
         cbPatrimonios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Casa Patrimonial de La Lira", "Casa Patrimonial Quinta Bolívar", "Casa Patrimonial de las Posadas", "Casa Patrimonial Municipal del Alfarero", "Casa Patrimonial Chaguarchimbana", "Casa Patrimonial Municipal del Artista", "Antigua Escuela Central", "Casa Patrimonial Márquez" }));
         jPanel1.add(cbPatrimonios, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Elija el tipo");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
 
         btnOrdenar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         btnOrdenar.setText("Ordenar por tipo");
@@ -218,7 +219,7 @@ DefaultTableModel modelo;
                 btnOrdenarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 410, 160, 60));
+        jPanel1.add(btnOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 160, 60));
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Seleccione el lugar que desea guardar en sus proximas visitas para agregarlo a la tabla:");
@@ -236,6 +237,31 @@ DefaultTableModel modelo;
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 130, 30));
+
+        cbHoteles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Hotel Oro Verde Cuenca", "Mansión Alcázar", "Hotel Carvallo", "Four Points by Sheraton Cuenca", "Hotel Boutique Santa Lucía", "Hotel Cruz del Vado", "San Juan Hotel", "Hotel Victoria", "Hotel El Conquistador", "Hotel Forum" }));
+        jPanel1.add(cbHoteles, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+
+        cbIglesias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Catedral Nueva (Inmaculada Concepción)", "Catedral Vieja (El Sagrario)", "Iglesia de Santo Domingo", "Iglesia de San Blas", "Iglesia de San Alfonso", "Iglesia de San Sebastián", "Iglesia del Cenáculo", "Iglesia de Todos Santos", "Iglesia de El Vergel", "Iglesia de La Merced" }));
+        jPanel1.add(cbIglesias, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+
+        cbParques.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Parque Calderón", "Parque de La Madre", "Parque El Paraíso", "Parque Lineal Yanuncay", "Plaza San Francisco", "Plaza del Otorongo", "Plaza Rotary", "Parque Miraflores", "Parque La Libertad", "Parque Luis Cordero" }));
+        jPanel1.add(cbParques, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+
+        cbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Museos", "Restaurantes", "Cafeterias", "Mercados", "Miradores", "Termales", "Patrimonios", "Artesania", "Hoteles", "Iglesias", "Parques", "Cultura" }));
+        cbTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTipoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
+
+        cbCultura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Teatro Casa de la Cultura", "Teatro Pumapungo", "Teatro Sucre", "Centro Cultural CIDAP", "Sala Proceso", "Casa de los Arcos", "Museo de Arte Moderno (también sede de teatro)", "Centro Cultural El Ángel", "Centro Cultural El Alfarero", "La Guarida" }));
+        jPanel1.add(cbCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Elija el tipo");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
 
@@ -281,12 +307,20 @@ DefaultTableModel modelo;
             lugarSeleccionado = cbPatrimonios.getSelectedItem().toString();
         } else if ("Artesania".equals(tipoLugar)) {
        lugarSeleccionado = cbArtesania.getSelectedItem().toString();
+        }else if("Hoteles".equals(tipoLugar)){
+            lugarSeleccionado = cbHoteles.getSelectedItem().toString();
+        }else if("Iglesias".equals(tipoLugar)){
+            lugarSeleccionado = cbIglesias.getSelectedItem().toString();
+        }else if("Parques".equals(tipoLugar)){
+            lugarSeleccionado = cbParques.getSelectedItem().toString();
+        }else if("Cultura".equals(tipoLugar)){
+            lugarSeleccionado = cbCultura.getSelectedItem().toString();
         }
         
         // Verificar que se haya seleccionado una fecha
         if (txtFecha.getDate() != null) {
-            String fechaVisita = txtFecha.getDate().toString();
-            String nuevaFila[] = {tipoLugar, lugarSeleccionado, fechaVisita};
+            Date fechaVisita = txtFecha.getDate();
+            String nuevaFila[] = {tipoLugar, lugarSeleccionado, fechaVisita.toString()};
             modelo.addRow(nuevaFila);
             guardarDatosEnArchivo();
             mtd_limpiar();
@@ -304,6 +338,39 @@ private void mtd_limpiar() {
         cbRestaurantes.setSelectedIndex(0);
         txtFecha.setDate(null);
     }
+private void ordenarPorFecha() {
+    int n = modelo.getRowCount();
+    List<Object[]> filas = new ArrayList<>();
+
+    // Guardar las filas en una lista
+    for (int i = 0; i < n; i++) {
+        Object[] fila = new Object[modelo.getColumnCount()];
+        for (int j = 0; j < modelo.getColumnCount(); j++) {
+            fila[j] = modelo.getValueAt(i, j);
+        }
+        filas.add(fila);
+    }
+
+    // Ordenar la lista por fecha
+    Collections.sort(filas, new Comparator<Object[]>() {
+        @Override
+        public int compare(Object[] fila1, Object[] fila2) {
+            Date fecha1 = (Date) fila1[2]; // Columna de fecha
+            Date fecha2 = (Date) fila2[2]; // Columna de fecha
+            return fecha1.compareTo(fecha2);
+        }
+    });
+
+    // Limpiar el modelo y volver a agregar las filas ordenadas
+    modelo.setRowCount(0); // Limpiar el modelo
+    for (Object[] fila : filas) {
+        modelo.addRow(fila);
+    }
+}
+
+
+ 
+
     private void cbTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoActionPerformed
         String opcionSeleccionada = (String) cbTipo.getSelectedItem();
     
@@ -315,7 +382,10 @@ private void mtd_limpiar() {
     cbTermales.setVisible(false);
     cbPatrimonios.setVisible(false);
     cbArtesania.setVisible(false);
-    
+    cbHoteles.setVisible(false);
+    cbIglesias.setVisible(false);
+    cbParques.setVisible(false);
+    cbCultura.setVisible(false);
     switch (opcionSeleccionada) {
         case "Museos":
             cbMuseos.setVisible(true);
@@ -341,20 +411,31 @@ private void mtd_limpiar() {
         case "Artesania":
             cbArtesania.setVisible(true);
             break;
+        case "Hoteles":
+            cbHoteles.setVisible(true);
+            break;
+        case "Iglesias":
+            cbIglesias.setVisible(true);
+            break;   
+        case "Parques":
+            cbIglesias.setVisible(true);
+            break;   
+            case "Cultura":
+            cbCultura.setVisible(true);
+            break;    
     }
     }//GEN-LAST:event_cbTipoActionPerformed
 private void ordenarPorTipo() {
     int n = modelo.getRowCount();
     boolean intercambiado;
 
-    // Método de burbuja para ordenar
     do {
         intercambiado = false;
         for (int i = 0; i < n - 1; i++) {
             String tipo1 = modelo.getValueAt(i, 0).toString();
             String tipo2 = modelo.getValueAt(i + 1, 0).toString();
             if (tipo1.compareTo(tipo2) > 0) {
-                // Intercambiar filas
+               
                 for (int j = 0; j < modelo.getColumnCount(); j++) {
                     Object temp = modelo.getValueAt(i, j);
                     modelo.setValueAt(modelo.getValueAt(i + 1, j), i, j);
@@ -363,7 +444,7 @@ private void ordenarPorTipo() {
                 intercambiado = true;
             }
         }
-        n--; // Reducir el tamaño del array
+        n--; 
     } while (intercambiado);
 }
 
@@ -412,9 +493,13 @@ private void ordenarPorTipo() {
     private javax.swing.JButton btnPrincipio;
     private javax.swing.JComboBox<String> cbArtesania;
     private javax.swing.JComboBox<String> cbCafeterias;
+    private javax.swing.JComboBox<String> cbCultura;
+    private javax.swing.JComboBox<String> cbHoteles;
+    private javax.swing.JComboBox<String> cbIglesias;
     private javax.swing.JComboBox<String> cbMercados;
     private javax.swing.JComboBox<String> cbMiradores;
     private javax.swing.JComboBox<String> cbMuseos;
+    private javax.swing.JComboBox<String> cbParques;
     private javax.swing.JComboBox<String> cbPatrimonios;
     private javax.swing.JComboBox<String> cbRestaurantes;
     private javax.swing.JComboBox<String> cbTermales;
