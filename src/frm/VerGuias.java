@@ -17,7 +17,7 @@ import java.util.Date;
  * @author Usuario
  */
 public class VerGuias extends javax.swing.JFrame {
-    
+    private String correoUsuario;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VerGuias.class.getName());
 DefaultTableModel modelo;
     private static boolean ga = false;
@@ -66,7 +66,41 @@ DefaultTableModel modelo;
         txtPresentacionSantiago2.setVisible(false);
         txtPresentacionSantiago3.setVisible(false);
     }
-
+public VerGuias(String correo) {
+        this(); // Llama al constructor original
+        this.correoUsuario = correo; // Establece el correo del usuario
+        // Aquí puedes cargar datos del usuario si es necesario
+        String[] datosUsuario = obtenerDatosUsuario(correo);
+        // Puedes usar datosUsuario para mostrar información en la interfaz
+    }
+private void guardarDatosUsuarioReserva(String nombres, String apellidos, String email, String telefono, String tipoReserva, String nombreLugar, Date fechaReserva, String guia, Date fechaInicio, Date fechaFin) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("usuariosReservas.txt", true))) {
+        String datosUsuario = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s%n", 
+            nombres, apellidos, email, telefono, tipoReserva, nombreLugar, fechaReserva.toString(), guia, fechaInicio.toString(), fechaFin.toString());
+        writer.write(datosUsuario);
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al guardar los datos del usuario: " + e.getMessage());
+    }
+}
+ private String[] obtenerDatosUsuario(String email) {
+        String[] datos = new String[4]; // Nombre, Apellido, Correo, Teléfono
+        try (BufferedReader br = new BufferedReader(new FileReader("cuentausers.txt"))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(",");
+                if (partes.length == 6 && partes[2].equals(email)) { // Verifica que el correo coincida
+                    datos[0] = partes[0]; // Nombre
+                    datos[1] = partes[1]; // Apellido
+                    datos[2] = partes[2]; // Correo
+                    datos[3] = partes[3]; // Teléfono
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al leer los datos del usuario: " + e.getMessage());
+        }
+        return datos;
+    }
      private void mtd_prepararTabla() {
         String titulos[] = {"Guia", "Fecha de inicio", "Fecha de fin"};
         modelo = new DefaultTableModel(null, titulos);
@@ -546,27 +580,55 @@ private void cargarDatosDesdeArchivo() {
     }//GEN-LAST:event_btnEliminarRegistroContratoActionPerformed
 
     private void btnContratarGuiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContratarGuiaActionPerformed
-if (cbGuias.getSelectedItem() != null && cbGuias.getSelectedItem().toString().length() > 0) {
-    String guiasSeleccionados = cbGuias.getSelectedItem().toString();
-    // Verificar que se haya seleccionado una fecha de inicio
-    if (dateInicioViaje.getDate() != null) {
-        Date fechaInicio = dateInicioViaje.getDate();
-        // Verificar que se haya seleccionado una fecha de fin
-        if (dateFinViaje.getDate() != null) {
-            Date fechaFin = dateFinViaje.getDate();
-            // Verificar que la fecha de fin no sea anterior a la fecha de inicio
-            if (fechaFin.before(fechaInicio)) {
-                JOptionPane.showMessageDialog(null, "La fecha de fin no puede ser anterior a la fecha de inicio.");
-            } else {
-                // Agregar la fila a la tabla
-                String nuevaFila[] = {guiasSeleccionados, fechaInicio.toString(), fechaFin.toString()};
-                modelo.addRow(nuevaFila);
-                guardarDatosEnArchivo();
-                JOptionPane.showMessageDialog(null, "Notificaremos al guía acerca de su reserva, este se pondra en contacto con usted lo antes posible.");
+                                                
+    if (cbGuias.getSelectedItem() != null && cbGuias.getSelectedItem().toString().length() > 0) {
+        String guiasSeleccionados = cbGuias.getSelectedItem().toString();
+        
+        // Verificar que se haya seleccionado una fecha de inicio
+        if (dateInicioViaje.getDate() != null) {
+            Date fechaInicio = dateInicioViaje.getDate();
+            
+            // Verificar que se haya seleccionado una fecha de fin
+            if (dateFinViaje.getDate() != null) {
+                Date fechaFin = dateFinViaje.getDate();
+                
+                // Verificar que la fecha de fin no sea anterior a la fecha de inicio
+                if (fechaFin.before(fechaInicio)) {
+                    JOptionPane.showMessageDialog(null, "La fecha de fin no puede ser anterior a la fecha de inicio.");
+                } else {
+                    // Agregar la fila a la tabla
+                    String nuevaFila[] = {guiasSeleccionados, fechaInicio.toString(), fechaFin.toString()};
+                    modelo.addRow(nuevaFila);
+                    guardarDatosEnArchivo(); // Guardar en el archivo de guías
+String[] datosUsuario = obtenerDatosUsuario(correoUsuario);
+                        guardarDatosUsuarioReserva(datosUsuario[0], datosUsuario[1], datosUsuario[2], datosUsuario[3], "Guía", guiasSeleccionados, new Date(), guiasSeleccionados, fechaInicio, fechaFin);
+                  
+
+                    JOptionPane.showMessageDialog(null, "Notificaremos al guía acerca de su reserva, este se pondra en contacto con usted lo antes posible.");
+                }
             }
         }
     }
 }
+
+// Método para guardar datos en archivo de admin
+private void guardarParaAdmin(String[] datosTurista, String guia, String fechaInicio, String fechaFin) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("reservasAdmin.txt", true))) {
+        String linea = String.join(",",
+            datosTurista[0], // Nombre
+            datosTurista[1], // Apellido
+            datosTurista[2], // Correo
+            datosTurista[3], // Teléfono
+            guia,            // Guía
+            fechaInicio,     // Fecha de inicio
+            fechaFin         // Fecha de fin
+        );
+        writer.write(linea);
+        writer.newLine();
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al guardar registro para admin: " + e.getMessage());
+    }
+
     }//GEN-LAST:event_btnContratarGuiaActionPerformed
 
     /**

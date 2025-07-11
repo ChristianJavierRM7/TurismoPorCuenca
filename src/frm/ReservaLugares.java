@@ -18,7 +18,7 @@ import java.util.List;
 
 
 public class ReservaLugares extends javax.swing.JFrame {
-    
+    private String correoUsuario;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ReservaLugares.class.getName());
 DefaultTableModel modelo;
     private static boolean ga = false;
@@ -69,6 +69,16 @@ DefaultTableModel modelo;
         JOptionPane.showMessageDialog(null, "Error al guardar los datos: " + e.getMessage());
     }
 }
+    
+   private void guardarDatosUsuarioReserva(String nombres, String apellidos, String email, String telefono, String tipoReserva, String nombreLugar, Date fechaReserva, String guia, Date fechaInicio, Date fechaFin) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("usuariosReservas.txt", true))) {
+            String datosUsuario = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s%n", 
+                nombres, apellidos, email, telefono, tipoReserva, nombreLugar, fechaReserva.toString(), guia, fechaInicio != null ? fechaInicio.toString() : "", fechaFin != null ? fechaFin.toString() : "");
+            writer.write(datosUsuario);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al guardar los datos del usuario: " + e.getMessage());
+        }
+    }
  private void mtd_prepararTabla() {
         String titulos[] = {"Tipo", "Nombre", "Fecha"};
         modelo = new DefaultTableModel(null, titulos);
@@ -323,6 +333,8 @@ DefaultTableModel modelo;
             String nuevaFila[] = {tipoLugar, lugarSeleccionado, fechaVisita.toString()};
             modelo.addRow(nuevaFila);
             guardarDatosEnArchivo();
+            String[] datosUsuario = obtenerDatosUsuario(); // Método que obtenga los datos del usuario
+                guardarDatosUsuarioReserva(datosUsuario[0], datosUsuario[1], datosUsuario[2], datosUsuario[3], tipoLugar, lugarSeleccionado, fechaVisita, null, null, null);
             mtd_limpiar();
         } else {
             JOptionPane.showMessageDialog(null, "Seleccione una fecha de visita");
@@ -337,6 +349,25 @@ private void mtd_limpiar() {
         cbMuseos.setSelectedIndex(0);
         cbRestaurantes.setSelectedIndex(0);
         txtFecha.setDate(null);
+    }
+ private String[] obtenerDatosUsuario() {
+        String[] datos = new String[4]; // Nombre, Apellido, Correo, Teléfono
+        try (BufferedReader br = new BufferedReader(new FileReader("cuentausers.txt"))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(",");
+                if (partes.length == 6 && partes[2].equals(correoUsuario)) { // Verifica que el correo coincida
+                    datos[0] = partes[0]; // Nombre
+                    datos[1] = partes[1]; // Apellido
+                    datos[2] = partes[2]; // Correo
+                    datos[3] = partes[3]; // Teléfono
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al leer los datos del usuario: " + e.getMessage());
+        }
+        return datos;
     }
 private void ordenarPorFecha() {
     int n = modelo.getRowCount();
