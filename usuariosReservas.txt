@@ -1,2 +1,4 @@
 null,null,null,null,Restaurantes,Raymipampa,Sat Jul 19 22:09:38 GMT-05:00 2025,null,,
 null,null,null,null,Guía,Karla Torres Ordóñez,Thu Jul 10 22:09:58 GMT-05:00 2025,Karla Torres Ordóñez,Fri Jul 04 22:09:55 GMT-05:00 2025,Sun Jul 20 22:09:56 GMT-05:00 2025
+null,null,null,null,Museos,Amalia Uriguen,Sun Jul 13 08:43:01 GMT-05:00 2025,null,,
+null,null,null,null,Miradores,Parque Nacional Cajas,Sun Jul 13 09:04:16 GMT-05:00 2025,null,,

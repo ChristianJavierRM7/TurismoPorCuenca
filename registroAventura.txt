@@ -11,3 +11,5 @@ Cultura,Sala Proceso,Sun Jul 27 19:33:34 GMT-05:00 2025
 Restaurantes,Café del Museo,Sun Jul 20 19:42:54 GMT-05:00 2025
 Restaurantes,Tiesto’s Café-Restaurant,Sun Jul 20 19:45:40 GMT-05:00 2025
 Restaurantes,Raymipampa,Sat Jul 19 22:09:38 GMT-05:00 2025
+Museos,Amalia Uriguen,Sun Jul 13 08:43:01 GMT-05:00 2025
+Miradores,Parque Nacional Cajas,Sun Jul 13 09:04:16 GMT-05:00 2025

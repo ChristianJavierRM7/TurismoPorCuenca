@@ -15,10 +15,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JComboBox;
 
 
 public class ReservaLugares extends javax.swing.JFrame {
     private String correoUsuario;
+    private Arbol arbolLugares;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ReservaLugares.class.getName());
 DefaultTableModel modelo;
     private static boolean ga = false;
@@ -29,6 +31,8 @@ DefaultTableModel modelo;
         initComponents();
         setLocationRelativeTo(null);
         mtd_prepararTabla();
+        arbolLugares = new Arbol("Lugares");
+    inicializarArbol();
          cbMuseos.setVisible(false);
     cbRestaurantes.setVisible(false);
     cbCafeterias.setVisible(false);
@@ -43,6 +47,30 @@ DefaultTableModel modelo;
     cbCultura.setVisible(false);
     cargarDatosDesdeArchivo();
     }
+    private void inicializarArbol() {
+    // Agregar lugares al árbol
+    arbolLugares.agregarLugar("Lugares", "Museos");
+    arbolLugares.agregarLugar("Museos", "Museo de Arte Moderno");
+    arbolLugares.agregarLugar("Museos", "Museo del Sombrero de Paja Toquilla");
+    arbolLugares.agregarLugar("Museos", "Museo Universitario");
+    arbolLugares.agregarLugar("Museos", "Museo Historia de La Medicina");
+    arbolLugares.agregarLugar("Museos", "Casa Museo Remigio Crespo Toral");
+    arbolLugares.agregarLugar("Museos", "Museo de las Culturas Aborigenes");
+    arbolLugares.agregarLugar("Museos", "Museo y Parque Ancestral Pumapungo");
+    arbolLugares.agregarLugar("Museos", "Museo de la Gastronomia Ecuatoriana");
+    arbolLugares.agregarLugar("Museos", "Museo Catedral Vieja");
+    arbolLugares.agregarLugar("Museos", "Museo del Sombrero Homero Ortega");
+    arbolLugares.agregarLugar("Museos", "Museo Municipal de la Paja Toquilla y el Sombrero");
+    arbolLugares.agregarLugar("Museos", "Museo de La Ciudad");
+    arbolLugares.agregarLugar("Museos", "Amalia Uriguen");
+    arbolLugares.agregarLugar("Museos", "Museo del Cacao");
+    arbolLugares.agregarLugar("Museos", "Museo de las Conceptas");
+    arbolLugares.agregarLugar("Museos", "Museo de antigüedades “Zoila Quezada”");
+    arbolLugares.agregarLugar("Lugares", "Restaurantes");
+    arbolLugares.agregarLugar("Restaurantes", "Tiesto’s Café-Restaurant");
+ 
+    // Agrega más lugares según sea necesario
+}
     private void cargarDatosDesdeArchivo() {
     try (BufferedReader reader = new BufferedReader(new FileReader("registroAventura.txt"))) {
         String linea;
@@ -103,10 +131,10 @@ DefaultTableModel modelo;
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        cbRestaurantes = new javax.swing.JComboBox<>();
         txtFecha = new com.toedter.calendar.JDateChooser();
         btnAgregar = new javax.swing.JButton();
         cbMuseos = new javax.swing.JComboBox<>();
+        cbRestaurantes = new javax.swing.JComboBox<>();
         cbCafeterias = new javax.swing.JComboBox<>();
         cbMercados = new javax.swing.JComboBox<>();
         cbTermales = new javax.swing.JComboBox<>();
@@ -123,6 +151,7 @@ DefaultTableModel modelo;
         cbTipo = new javax.swing.JComboBox<>();
         cbCultura = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -187,9 +216,6 @@ DefaultTableModel modelo;
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Lugar:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
-
-        cbRestaurantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Tiesto’s Café-Restaurant", "El Mercado", "Raymipampa", "Café del Museo", "Dos Sucres", "Goza Espresso Bar", "La María Cocina de Huerta", "Jodoco Belgian Bistro", "Fabianos Pizzería", "Café San Sebas" }));
-        jPanel1.add(cbRestaurantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
         jPanel1.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
 
         btnAgregar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -203,6 +229,14 @@ DefaultTableModel modelo;
 
         cbMuseos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Museo de Arte Moderno", "Casa Museo La Condamine", "Museo del Sombrero de Paja Toquilla", "Museo Universitario", "Museo Historia de La Medicina", "Casa Museo Remigio Crespo Toral ", "Museo de las Artes Populares De America", "Museo de las Culturas Aborigenes", "Museo y Parque Ancestral Pumapungo", "Museo de la Gastronomia Ecuatoriana", "Museo Catedral Vieja", "Museo del Sombrero Homero Ortega", "Museo Municipal de la Paja Toquilla y el Sombrero", "Museo de La Ciudad", "Amalia Uriguen", "Museo del Cacao", "Museo de las Conceptas", "Museo de antigüedades “Zoila Quezada”" }));
         jPanel1.add(cbMuseos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+
+        cbRestaurantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Tiesto’s Café-Restaurant", "El Mercado", "Raymipampa", "Café del Museo", "Dos Sucres", "Goza Espresso Bar", "La María Cocina de Huerta", "Jodoco Belgian Bistro", "Fabianos Pizzería", "Café San Sebas" }));
+        cbRestaurantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbRestaurantesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbRestaurantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
 
         cbCafeterias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Café de la Sucre", "Café del Zaguán", "Café de San Sebas", "Dulcet", "Paccari" }));
         jPanel1.add(cbCafeterias, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
@@ -272,6 +306,15 @@ DefaultTableModel modelo;
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Elija el tipo");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+
+        jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jButton2.setText("Buscar Lugares");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 410, 160, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
 
@@ -369,6 +412,63 @@ private void mtd_limpiar() {
         }
         return datos;
     }
+ class Nodo {
+    String nombre;
+    List<Nodo> hijos;
+
+    public Nodo(String nombre) {
+        this.nombre = nombre;
+        this.hijos = new ArrayList<>();
+    }
+
+    public void agregarHijo(Nodo hijo) {
+        hijos.add(hijo);
+    }
+}
+
+class Arbol {
+    Nodo raiz;
+
+    public Arbol(String nombreRaiz) {
+        raiz = new Nodo(nombreRaiz);
+    }
+
+    public void agregarLugar(String nombrePadre, String nombreHijo) {
+        Nodo padre = buscarNodo(raiz, nombrePadre);
+        if (padre != null) {
+            padre.agregarHijo(new Nodo(nombreHijo));
+        }
+    }
+
+    private Nodo buscarNodo(Nodo nodo, String nombre) {
+        if (nodo.nombre.equals(nombre)) {
+            return nodo;
+        }
+        for (Nodo hijo : nodo.hijos) {
+            Nodo resultado = buscarNodo(hijo, nombre);
+            if (resultado != null) {
+                return resultado;
+            }
+        }
+        return null;
+    }
+
+    public List<String> buscarLugares(String nombre) {
+        List<String> resultados = new ArrayList<>();
+        buscarLugaresRecursivo(raiz, nombre, resultados);
+        return resultados;
+    }
+
+    private void buscarLugaresRecursivo(Nodo nodo, String nombre, List<String> resultados) {
+        if (nodo.nombre.toLowerCase().contains(nombre.toLowerCase())) {
+            resultados.add(nodo.nombre);
+        }
+        for (Nodo hijo : nodo.hijos) {
+            buscarLugaresRecursivo(hijo, nombre, resultados);
+        }
+    }
+}
+
 private void ordenarPorFecha() {
     int n = modelo.getRowCount();
     List<Object[]> filas = new ArrayList<>();
@@ -492,6 +592,54 @@ private void ordenarPorTipo() {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+                                                
+    String nombreLugar = JOptionPane.showInputDialog("Ingrese el nombre del lugar a buscar:");
+    if (nombreLugar != null && !nombreLugar.trim().isEmpty()) {
+        List<String> resultados = new ArrayList<>();
+        
+        // Buscar en cada ComboBox
+        buscarEnComboBox(cbMuseos, nombreLugar, resultados);
+        buscarEnComboBox(cbRestaurantes, nombreLugar, resultados);
+        buscarEnComboBox(cbCafeterias, nombreLugar, resultados);
+        buscarEnComboBox(cbMercados, nombreLugar, resultados);
+        buscarEnComboBox(cbMiradores, nombreLugar, resultados);
+        buscarEnComboBox(cbTermales, nombreLugar, resultados);
+        buscarEnComboBox(cbPatrimonios, nombreLugar, resultados);
+        buscarEnComboBox(cbArtesania, nombreLugar, resultados);
+        buscarEnComboBox(cbHoteles, nombreLugar, resultados);
+        buscarEnComboBox(cbIglesias, nombreLugar, resultados);
+        buscarEnComboBox(cbParques, nombreLugar, resultados);
+        buscarEnComboBox(cbCultura, nombreLugar, resultados);
+        
+        // Mostrar resultados
+        if (resultados.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No se encontraron lugares.");
+        } else {
+            StringBuilder mensaje = new StringBuilder("Lugares encontrados:\n");
+            for (String lugar : resultados) {
+                mensaje.append(lugar).append("\n");
+            }
+            JOptionPane.showMessageDialog(null, mensaje.toString());
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Por favor, ingrese un nombre para buscar.");
+    }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+private void buscarEnComboBox(JComboBox<String> comboBox, String nombreLugar, List<String> resultados) {
+    for (int i = 0; i < comboBox.getItemCount(); i++) {
+        String item = comboBox.getItemAt(i);
+        if (item.toLowerCase().contains(nombreLugar.toLowerCase()) && !item.equals("Seleccionar")) {
+            resultados.add(item);
+        }
+    }
+}
+
+    private void cbRestaurantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRestaurantesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbRestaurantesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -536,6 +684,7 @@ private void ordenarPorTipo() {
     private javax.swing.JComboBox<String> cbTermales;
     private javax.swing.JComboBox<String> cbTipo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
