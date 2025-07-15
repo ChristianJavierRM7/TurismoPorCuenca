@@ -133,7 +133,9 @@ public class FoodTrip1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnVFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFamiliaActionPerformed
-        // TODO add your handling code here:
+        PanHornoLena1 panHornoLena1 = new PanHornoLena1();
+        panHornoLena1.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVFamiliaActionPerformed
 
     private void btnVFamilia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFamilia1ActionPerformed

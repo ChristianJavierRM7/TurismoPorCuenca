@@ -103,32 +103,32 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jPanel2.add(btnActividadesCuenca, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 110, 80));
 
-        btnVGastronomia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVGastronomia.setText("<html>Viaje por<br><small>Gastronomía</small></html>");
+        btnVGastronomia.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
+        btnVGastronomia.setText("<html>Viaje por Gastronomia<br><small></small></html>");
         btnVGastronomia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVGastronomiaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVGastronomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 110, 60));
+        jPanel2.add(btnVGastronomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 360, 160));
 
-        btnVCultura.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVCultura.setText("<html>Viaje por<br><small>Cultura</small></html>");
+        btnVCultura.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
+        btnVCultura.setText("<html>Viaje por Cultura<br><small></small></html>");
         btnVCultura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVCulturaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 110, 60));
+        jPanel2.add(btnVCultura, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, 290, 150));
 
-        btnVAventuras.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnVAventuras.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
         btnVAventuras.setText("<html>Viaje por Aventuras<br><small></small></html>");
         btnVAventuras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVAventurasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVAventuras, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 110, 60));
+        jPanel2.add(btnVAventuras, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 290, 150));
 
         btnBlog.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnBlog.setText("<html>Blog<br><small>Turistico</small></html>");
@@ -139,14 +139,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jPanel2.add(btnBlog, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 80, 80));
 
-        btnVFiestas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVFiestas.setText("<html>Viaje por<br><small>Fiestas</small></html>");
+        btnVFiestas.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
+        btnVFiestas.setText("<html>Viaje por Fiestas<br><small></small></html>");
         btnVFiestas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVFiestasActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVFiestas, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 130, 60));
+        jPanel2.add(btnVFiestas, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 300, 160));
 
         btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCerrarSesion.setText("<html>Cerrar sesión<br><small></small></html>");

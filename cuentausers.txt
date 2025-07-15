@@ -1,2 +1,3 @@
 Juan,Perez,juanperez1@gmail.com,0994761553,Pepa123oso@,Usuario Turista
 pepe,alcant,pepe@gm.com,1234567890,Pepe12oso@,Guia y Administrador
+Christian,Ruiz,christianruiz@gmail.com,0994761553,Pepa123oso@,Usuario Turista
