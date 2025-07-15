@@ -1,24 +1,17 @@
 package frm;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-/**
- *
- * @author danielgualan
- */
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 import javax.swing.DefaultListModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class dormirCuenca extends javax.swing.JFrame {
-
     private DefaultListModel<String> modeloLista = new DefaultListModel<>();
     private HashMap<String, String> infoHoteles = new HashMap<>();
-
+    private Queue<String> colaVisitas = new LinkedList<>(); // ← COLA DE VISITAS
+    
     public dormirCuenca() {
         initComponents();
         setLocationRelativeTo(null);
@@ -37,7 +30,7 @@ public class dormirCuenca extends javax.swing.JFrame {
         });
     }
 
-    private void cargarInformacionHoteles() {
+ private void cargarInformacionHoteles() {
         // 5 estrellas
         infoHoteles.put("Four Points by Sheraton Cuenca",
                 "Es un Hotel de marca internacional que pertenece a la cadena Marriott International Inc...\n"
@@ -141,6 +134,8 @@ public class dormirCuenca extends javax.swing.JFrame {
                 + "Precios: $20 a $50");
     }
 
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -164,6 +159,7 @@ public class dormirCuenca extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         btnRegresar4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        btnRegresar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -209,7 +205,7 @@ public class dormirCuenca extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 320, 352));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 320, 352));
 
         jScrollPane1.setViewportView(jList1);
 
@@ -222,12 +218,21 @@ public class dormirCuenca extends javax.swing.JFrame {
                 btnRegresar4ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 150, 60));
+        jPanel1.add(btnRegresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 150, 60));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Dónde Dormir en Cuenca?");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        btnRegresar1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnRegresar1.setText("Guardar");
+        btnRegresar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresar1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 150, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 480));
 
@@ -235,8 +240,7 @@ public class dormirCuenca extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
-        String seleccion = (String) cmbCategoria.getSelectedItem();
+    String seleccion = (String) cmbCategoria.getSelectedItem();
         modeloLista.clear();
 
         switch (seleccion) {
@@ -275,10 +279,20 @@ public class dormirCuenca extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnRegresar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar4ActionPerformed
-        // TODO add your handling code here:
-        ReservaLugares reservaLugares = new ReservaLugares();
-        reservaLugares.setVisible(true);
-        this.dispose();
+       String hotelSeleccionado = jList1.getSelectedValue();
+
+        if (hotelSeleccionado != null && !hotelSeleccionado.isEmpty()) {
+            colaVisitas.add(hotelSeleccionado);
+
+            StringBuilder visitas = new StringBuilder("Visitas pendientes:\n");
+            for (String hotel : colaVisitas) {
+                visitas.append("- ").append(hotel).append("\n");
+            }
+
+            jTextArea1.setText(visitas.toString());
+        } else {
+            jTextArea1.setText("Por favor selecciona un hotel para añadir a la cola de visitas.");
+        }
     }//GEN-LAST:event_btnRegresar4ActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
@@ -288,6 +302,21 @@ public class dormirCuenca extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    private void btnRegresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar1ActionPerformed
+        // TODO add your handling code here:
+        ReservaLugares reserva = new ReservaLugares();
+        reserva.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresar1ActionPerformed
+ private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {                                         
+        // TODO add your handling code here:
+        StringBuilder visitas = new StringBuilder("Visitas pendientes:\n");
+        for (String hotel : colaVisitas) {
+            visitas.append("- ").append(hotel).append("\n");
+        }
+        jTextArea1.setText(visitas.toString());
+
+    }   
     /**
      * @param args the command line arguments
      */
@@ -328,6 +357,7 @@ public class dormirCuenca extends javax.swing.JFrame {
     private javax.swing.JButton bntReiniciar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnRegresar1;
     private javax.swing.JButton btnRegresar4;
     private javax.swing.JComboBox<String> cmbCategoria;
     private javax.swing.JLabel jLabel1;

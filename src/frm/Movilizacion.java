@@ -1,6 +1,7 @@
 package frm;
+import java.util.LinkedList;
+import java.util.Queue;
 import javax.swing.JTextArea;
-
 public class Movilizacion extends javax.swing.JFrame {
 
     /**
@@ -10,7 +11,7 @@ public class Movilizacion extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-
+private Queue<String> colaTransportes = new LinkedList<>();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,6 +32,8 @@ public class Movilizacion extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnRegresar4 = new javax.swing.JButton();
+        btnRegresar1 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -95,13 +98,30 @@ public class Movilizacion extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
         btnRegresar4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnRegresar4.setText("Añadir Visita");
+        btnRegresar4.setText("Guardar");
         btnRegresar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresar4ActionPerformed(evt);
             }
         });
         jPanel1.add(btnRegresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 150, 60));
+
+        btnRegresar1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnRegresar1.setText("Añadir Visita");
+        btnRegresar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresar1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 150, 60));
+
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 480));
 
@@ -115,7 +135,7 @@ public class Movilizacion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String tipoSeleccionado = cmbTipoTransporte.getSelectedItem().toString();
+          String tipoSeleccionado = cmbTipoTransporte.getSelectedItem().toString();
 
     switch (tipoSeleccionado) {
         case "Furboneta":
@@ -161,11 +181,44 @@ public class Movilizacion extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtTipoTransporteAncestorAdded
 
     private void btnRegresar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar4ActionPerformed
-        // TODO add your handling code here:
-        ReservaLugares reservaLugares = new ReservaLugares();
-        reservaLugares.setVisible(true);
-        this.dispose();
+        String tipoSeleccionado = (String) cmbTipoTransporte.getSelectedItem();
+
+    if (!tipoSeleccionado.equals("Selecciona medio de transporte")) {
+        colaTransportes.add(tipoSeleccionado);
+
+        StringBuilder texto = new StringBuilder("Medios de transporte seleccionados:\n");
+        for (String transporte : colaTransportes) {
+            texto.append("- ").append(transporte).append("\n");
+        }
+
+        TxtTipoTransporte.setText(texto.toString());
+    } else {
+        TxtTipoTransporte.setText("Por favor selecciona un tipo de transporte para añadir a la cola.");
+    }
     }//GEN-LAST:event_btnRegresar4ActionPerformed
+
+    private void btnRegresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar1ActionPerformed
+        // TODO add your handling code here:
+        ReservaLugares reserva = new ReservaLugares();
+        reserva.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegresar1ActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        if (!colaTransportes.isEmpty()) {
+            String eliminado = colaTransportes.poll();  // Elimina el primer elemento
+            StringBuilder texto = new StringBuilder("Se eliminó: " + eliminado + "\n\n");
+            texto.append("Medios de transporte restantes:\n");
+
+            for (String transporte : colaTransportes) {
+                texto.append("- ").append(transporte).append("\n");
+            }
+
+            TxtTipoTransporte.setText(texto.toString());
+        } else {
+            TxtTipoTransporte.setText("No hay transportes en la lista para eliminar.");
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,6 +259,8 @@ public class Movilizacion extends javax.swing.JFrame {
     private javax.swing.JTextArea TxtTipoTransporte;
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnRegresar1;
     private javax.swing.JButton btnRegresar4;
     private javax.swing.JButton btnReiniciar;
     private javax.swing.JComboBox<String> cmbTipoTransporte;

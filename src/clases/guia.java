@@ -1,60 +1,48 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package clases;
 
-/**
- *
- * @author RYZEN 7
- */
 public class guia {
-    private String nombreGuia;
-    private String expGuia;
-    private String recomenGuia;
-    private String calificacionGuia;
+    private String nombre;
+    private int edad;
+    private String experiencia;
+    private String idiomas;
+    private String especialidad;
+    private String presentacion;
 
     public guia() {
     }
 
-    public guia(String nombreGuia, String expGuia, String recomenGuia, String calificacionGuia) {
-        this.nombreGuia = nombreGuia;
-        this.expGuia = expGuia;
-        this.recomenGuia = recomenGuia;
-        this.calificacionGuia = calificacionGuia;
+    public guia(String nombre, int edad, String experiencia, String idiomas, String especialidad, String presentacion) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.experiencia = experiencia;
+        this.idiomas = idiomas;
+        this.especialidad = especialidad;
+        this.presentacion = presentacion;
     }
 
-    public String getNombreGuia() {
-        return nombreGuia;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreGuia(String nombreGuia) {
-        this.nombreGuia = nombreGuia;
+    public int getEdad() {
+        return edad;
     }
 
-    public String getExpGuia() {
-        return expGuia;
+    public String getExperiencia() {
+        return experiencia;
     }
 
-    public void setExpGuia(String expGuia) {
-        this.expGuia = expGuia;
+    public String getIdiomas() {
+        return idiomas;
     }
 
-    public String getRecomenGuia() {
-        return recomenGuia;
+    public String getEspecialidad() {
+        return especialidad;
     }
 
-    public void setRecomenGuia(String recomenGuia) {
-        this.recomenGuia = recomenGuia;
+    public String getPresentacion() {
+        return presentacion;
     }
 
-    public String getCalificacionGuia() {
-        return calificacionGuia;
-    }
-
-    public void setCalificacionGuia(String calificacionGuia) {
-        this.calificacionGuia = calificacionGuia;
-    }
-    
     
 }

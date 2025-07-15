@@ -1,2 +1,3 @@
-Karla Torres Ordóñez,Thu Jul 10 08:36:27 GMT-05:00 2025,Fri Jul 25 08:36:29 GMT-05:00 2025
-Karla Torres Ordóñez,Fri Jul 04 22:09:55 GMT-05:00 2025,Sun Jul 20 22:09:56 GMT-05:00 2025
+Andrés Jaramillo Vélez,Thu Jul 03 19:55:20 GMT-05:00 2025,Sat Jul 12 19:55:22 GMT-05:00 2025
+Karla Torres Ordóñez,Fri Jul 18 19:55:56 GMT-05:00 2025,Sat Jul 26 19:55:58 GMT-05:00 2025
+David Cordero Mera,Sat Jul 12 20:03:07 GMT-05:00 2025,Sun Jul 13 20:03:08 GMT-05:00 2025
